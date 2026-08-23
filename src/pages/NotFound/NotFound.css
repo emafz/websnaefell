@@ -1,0 +1,4 @@
+.not-found { min-height:72vh; display:grid; place-items:center; color:#fff; text-align:center; padding:60px 20px; }
+.not-found span { color:var(--color-accent); font-weight:800; }
+.not-found h1 { font-size:clamp(2.25rem,4vw,3.25rem); line-height:1.08; letter-spacing:-.025em; margin:14px 0; }
+.not-found p { color:#999; margin-bottom:28px; }

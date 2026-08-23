@@ -1,0 +1,8 @@
+.success-page { min-height:72vh; display:grid; place-items:center; padding:70px 0; }
+.success-card { max-width:850px; text-align:center; }
+.success-icon { width:70px; height:70px; border-radius:50%; display:grid; place-items:center; background:var(--color-accent); margin:0 auto 28px; font-size:2rem; font-weight:800; }
+.success-card h1 { font-size:clamp(2.25rem,4vw,3.25rem); line-height:1.08; letter-spacing:-.025em; margin:18px 0 30px; }
+.success-card > p { max-width:650px; margin:0 auto 30px; color:#66705e; line-height:1.7; }
+.success-data { display:flex; justify-content:center; gap:28px; margin:30px 0; flex-wrap:wrap; }
+.success-data span { background:#fff; padding:14px 18px; border-radius:999px; }
+.success-actions { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }

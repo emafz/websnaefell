@@ -1,0 +1,6 @@
+import { Link } from "react-router-dom";
+import CartItem from "../../components/CartItem/CartItem";
+import { useCart } from "../../hooks/useCart";
+import { formatCurrency } from "../../utils/currency";
+import "./Carrito.css";
+export default function Carrito(){const {items,total,removeItem,updateQuantity}=useCart();return <section className="section cart-page"><div className="container"><span className="eyebrow">Tu selección</span><h1 className="display-title">Carrito.</h1>{!items.length?<div className="cart-empty"><h2>Tu carrito está vacío.</h2><p>Explorá los modelos Snaefell y elegí la variante que mejor se adapte a vos.</p><Link className="button button--dark" to="/tienda">Ir a la tienda</Link></div>:<div className="cart-layout"><div>{items.map(item=><CartItem key={item.variantId} item={item} onRemove={()=>removeItem(item.variantId)} onQuantityChange={(q)=>updateQuantity(item.variantId,q)}/>)}</div><aside className="cart-summary"><h2>Resumen</h2><div><span>Productos</span><strong>{formatCurrency(total)}</strong></div><div><span>Envío</span><span>A definir</span></div><div className="cart-total"><span>Total</span><strong>{formatCurrency(total)}</strong></div><Link className="button button--primary button--wide" to="/checkout">Continuar compra</Link><Link className="continue-link" to="/tienda">← Seguir comprando</Link></aside></div>}</div></section>}

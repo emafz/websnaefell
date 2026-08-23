@@ -1,0 +1,4 @@
+.newsletter p { color:#939393; font-size:.88rem; line-height:1.5; }
+.newsletter form div { display:flex; border-bottom:1px solid #444; }
+.newsletter input { width:100%; background:transparent; border:0; padding:12px 0; color:#fff; outline:none; }
+.newsletter button { background:transparent; color:var(--color-accent); border:0; font-size:1.4rem; }

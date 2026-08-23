@@ -1,0 +1,4 @@
+.color-selector { display:flex; gap:10px; }
+.color-selector button { width:38px; height:38px; border-radius:50%; padding:4px; border:1px solid transparent; background:#fff; }
+.color-selector button.selected { border-color:#111; }
+.color-selector span { width:100%; height:100%; border-radius:50%; display:block; border:1px solid #cfcfcf; }

@@ -1,0 +1,17 @@
+node_modules
+dist
+Recursos
+.env
+.env.*
+!.env.example
+.DS_Store
+*.local
+
+
+# Archivos grandes
+*.psd
+*.ai
+*.zip
+*.rar
+*.mp4
+*.mov

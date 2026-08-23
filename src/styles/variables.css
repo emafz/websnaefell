@@ -1,0 +1,29 @@
+:root {
+  --font-primary: "Jost", Arial, sans-serif;
+  --font-display: "Poppins", "Jost", Arial, sans-serif;
+  --color-black: #00000f;
+  --color-black-soft: #070717;
+  --color-white: #ffffff;
+  --color-paper: #f7f7f8;
+  --color-paper-2: #eaeaea;
+  --color-text: #080813;
+  --color-muted: #47555e;
+  --color-border: #dedee4;
+  --color-accent: #5a18ea;
+  --color-accent-dark: #4510bc;
+  --color-warm: #ff7f00;
+  --color-danger: #c23838;
+  --container: 1280px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 34px;
+  --shadow-soft: 0 22px 70px rgba(0,0,15,.12);
+  --brand-gradient: radial-gradient(circle at 86% 18%, rgba(90,24,234,.68), transparent 34%), linear-gradient(115deg, #00000f 0%, #070717 58%, #2b0a7c 100%);
+  --brand-page-background:
+    radial-gradient(circle at 92% 12%, rgba(90,24,234,.62), transparent 30rem),
+    radial-gradient(circle at 8% 82%, rgba(90,24,234,.24), transparent 25rem),
+    linear-gradient(125deg, #00000f 0%, #070717 55%, #1d0754 100%);
+  --brand-surface: rgba(255,255,255,.96);
+  --brand-line: rgba(255,255,255,.14);
+  --transition: 180ms ease;
+}

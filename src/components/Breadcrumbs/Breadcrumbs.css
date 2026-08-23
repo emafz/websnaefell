@@ -1,0 +1,4 @@
+.breadcrumbs { display:flex; gap:9px; align-items:center; flex-wrap:wrap; color:var(--color-muted); font-size:.8rem; margin-bottom:32px; }
+.breadcrumbs span { display:flex; gap:9px; }
+.breadcrumbs b { font-weight:400; color:#bbb; }
+.breadcrumbs a:hover { color:var(--color-text); }

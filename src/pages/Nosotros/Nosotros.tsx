@@ -1,0 +1,4 @@
+import "./Nosotros.css";
+export default function Nosotros() {
+  return <section className="about-page"><div className="container about-hero"><span className="eyebrow">Sobre nosotros</span><h1>Movilidad que combina potencia, diseño y libertad.</h1><p>En Snaefell pensamos cada modelo como una experiencia de movimiento: ingeniería, calidad constructiva y una identidad visual que acompañe el ritmo de cada persona.</p></div><div className="container about-values"><article><span>01</span><h3>Diseño con propósito</h3><p>Cada detalle busca equilibrar funcionalidad, carácter y experiencia de uso.</p></article><article><span>02</span><h3>Rendimiento real</h3><p>Potencia, autonomía y control para responder a distintos tipos de recorrido.</p></article><article><span>03</span><h3>Respaldo</h3><p>Una propuesta de movilidad acompañada por soporte y componentes seleccionados.</p></article></div></section>;
+}

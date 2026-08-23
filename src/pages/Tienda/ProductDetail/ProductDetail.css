@@ -1,0 +1,52 @@
+.product-top { padding-top:128px; padding-bottom:90px; }
+.product-layout { display:grid; grid-template-columns:1.12fr .88fr; gap:70px; align-items:start; }
+.product-buy { position:sticky; top:110px; padding-top:25px; }
+.product-buy h1 { font-size:clamp(2.25rem,4vw,3.25rem); line-height:1.08; margin:18px 0 10px; text-transform:none; font-style:normal; font-weight:400; }
+.product-tagline { font-size:1.2rem; color:var(--color-muted); }
+.product-price { font-size:1.9rem; font-weight:800; margin:36px 0 20px; }
+.product-description { color:var(--color-muted); line-height:1.7; padding-bottom:30px; border-bottom:1px solid var(--color-border); }
+.product-option { padding:22px 0; border-bottom:1px solid var(--color-border); display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.product-option__label { display:flex; flex-direction:column; gap:5px; }
+.product-option__label span { color:var(--color-muted); font-size:.8rem; }
+.add-cart { margin-top:28px; }
+.product-cart-link { display:block; text-align:center; margin-top:16px; font-size:.85rem; font-weight:700; }
+.product-performance { background:var(--brand-gradient); color:#fff; padding:95px 0; }
+.product-performance .eyebrow { color:#fff; }
+.product-performance h2 { max-width:1000px; font-size:clamp(2rem,3.5vw,3.25rem); line-height:1.12; margin:20px 0 60px; }
+.spec-layout { display:grid; grid-template-columns:.7fr 1.3fr; gap:80px; }
+.spec-layout h2 { font-size:clamp(2rem,3.5vw,3.25rem); letter-spacing:-.025em; margin-top:16px; }
+.spec-layout dl { margin:0; }
+.spec-layout dl div { display:grid; grid-template-columns:1fr 1fr; gap:25px; padding:17px 0; border-bottom:1px solid var(--color-border); }
+.spec-layout dt { color:var(--color-muted); }
+.spec-layout dd { margin:0; font-weight:600; }
+.product-editorial { padding:110px 0 0; background:#f4f3f7; color:var(--color-text); }
+.product-editorial__intro { text-align:center; padding-bottom:70px; }
+.product-editorial__intro .eyebrow { color:var(--color-accent); }
+.product-editorial__intro h2 { max-width:920px; margin:24px auto 0; font-size:clamp(2rem,3.5vw,3.25rem); line-height:1.12; letter-spacing:-.025em; }
+.product-stories { display:grid; }
+.product-story { display:grid; grid-template-columns:1fr 1fr; min-height:610px; background:#fff; }
+.product-story--reverse .product-story__image { order:2; }
+.product-story__image { min-height:520px; overflow:hidden; background:#dedde2; }
+.product-story__image img { width:100%; height:100%; object-fit:cover; transition:transform .7s ease; }
+.product-story:hover .product-story__image img { transform:scale(1.025); }
+.product-story__copy { display:flex; flex-direction:column; justify-content:center; padding:clamp(45px,7vw,110px); }
+.product-story__copy > span { color:var(--color-accent); text-transform:uppercase; letter-spacing:.18em; font-size:.72rem; font-weight:800; }
+.product-story__copy h3 { font-size:clamp(2rem,3.5vw,3.25rem); line-height:1.1; letter-spacing:-.025em; margin:18px 0 25px; }
+.product-story__copy p { color:var(--color-muted); font-size:1.08rem; line-height:1.75; max-width:570px; }
+.product-faq { background:linear-gradient(135deg,rgba(90,24,234,.28),rgba(0,0,15,.55)); }
+.product-faq__layout { display:grid; grid-template-columns:.72fr 1.28fr; gap:90px; align-items:start; }
+.product-faq h2 { font-size:clamp(2rem,3.5vw,3.25rem); line-height:1.1; letter-spacing:-.025em; margin:22px 0; }
+.product-faq__layout > div:first-child p { color:var(--color-paper-2); }
+.product-faq__list details { border-top:1px solid rgba(255,255,255,.22); }
+.product-faq__list details:last-child { border-bottom:1px solid rgba(255,255,255,.22); }
+.product-faq__list summary { list-style:none; display:flex; justify-content:space-between; gap:24px; cursor:pointer; padding:25px 0; font-size:1.08rem; font-weight:700; }
+.product-faq__list summary::-webkit-details-marker { display:none; }
+.product-faq__list summary span { color:var(--color-warm); font-size:1.5rem; line-height:1; transition:transform var(--transition); }
+.product-faq__list details[open] summary span { transform:rotate(45deg); }
+.product-faq__list details p { color:var(--color-paper-2); line-height:1.7; margin:0; padding:0 45px 28px 0; }
+.related-section { background:rgba(0,0,15,.34); }
+.related-heading { display:flex; justify-content:space-between; align-items:end; margin-bottom:30px; }
+.related-heading h2 { font-size:2.2rem; margin:0; }
+@media(max-width:900px){ .product-layout{grid-template-columns:1fr;gap:35px}.product-buy{position:static}.spec-layout,.product-faq__layout{grid-template-columns:1fr;gap:45px}.product-story{min-height:0}.product-story__copy{padding:55px 38px} }
+@media(max-width:700px){ .product-editorial{padding-top:75px}.product-editorial__intro{padding-bottom:45px}.product-story{grid-template-columns:1fr}.product-story--reverse .product-story__image{order:0}.product-story__image{min-height:360px}.product-story__copy{padding:48px 24px 58px} }
+@media(max-width:600px){ .spec-layout dl div{grid-template-columns:1fr;gap:6px}.related-heading{align-items:flex-start;flex-direction:column;gap:12px;} }
