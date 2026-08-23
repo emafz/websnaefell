@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Hero from "../../components/Hero/Hero";
-import logo from "../../assets/global/snaefell-logo.webp";
+import landscapeImage from "../../assets/home/paisaje.png";
 import { products } from "../../data/products";
 import adventureImage from "../../../Recursos/Fotos Extra/P6/Negra/DSC04255-scaled.webp";
 import scootersBanner from "../../../Recursos/Banner/01-Monopatines.jpeg";
@@ -77,6 +77,7 @@ export default function Home() {
       </section>
 
       <section className="home-section home-brand">
+        <img className="home-brand__background" src={landscapeImage} alt="" aria-hidden="true" />
         <div className="home-container home-brand__layout">
           <div className="home-brand__copy">
             <span className="home-label">Snaefell</span>
@@ -86,8 +87,6 @@ export default function Home() {
             <strong>SNAEFELL. MOVETE DISTINTO.</strong>
           </div>
           <div className="home-brand__identity">
-            <div className="brand-mark" aria-hidden="true">S</div>
-            <img src={logo} alt="Snaefell" />
             <div className="brand-values">
               {brandValues.map((value) => <div key={value.title}><HomeIcon name={value.icon} /><span>{value.title}</span></div>)}
             </div>

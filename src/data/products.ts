@@ -1,14 +1,4 @@
 import type { Product } from "../types/Product";
-import f1Negro from "../pages/Tienda/BestrideF1/assets/negro/principal.jpg";
-import f1Blanco from "../pages/Tienda/BestrideF1/assets/blanco/principal.jpg";
-import f1Amarillo from "../pages/Tienda/BestrideF1/assets/amarillo/principal.jpg";
-import f1Verde from "../pages/Tienda/BestrideF1/assets/verde/principal.jpg";
-import f2Naranja from "../pages/Tienda/BestrideF2/assets/naranja/principal.jpg";
-import mantisNegro from "../pages/Tienda/MantisP6/assets/negro/principal.jpg";
-import mantisVerde from "../pages/Tienda/MantisP6/assets/verde/principal.jpg";
-import lightGris from "../pages/Tienda/LightP2/assets/gris/principal.jpg";
-import lightNegro from "../pages/Tienda/LightP2/assets/negro/principal.jpg";
-import antelopeGrisMarron from "../pages/Tienda/AntelopeP5/assets/gris-marron/principal.jpg";
 
 const catalogImages = (date: string, sku: string, indexes: number[]) =>
   indexes.map((index) => `https://imagenes-inp-aws.s3.amazonaws.com/imagenes/productos/036/${date}_${sku}-${index}_DS.jpg`);
@@ -37,10 +27,10 @@ export const products: Product[] = [
       { label: "Suspensión delantera", value: "Amortiguador hidráulico 10\"" }, { label: "Suspensión trasera", value: "Doble amortiguador" },
     ],
     variants: [
-      { id: "f1-negro", sku: "036001010001", slug: "negro", color: "Negro", colorHex: "#171717", price: 1596579.01, images: [f1Negro, ...catalogImages("12022026", "036001010001", [1,2,3,4,5,6,7])], sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036001010001", available: true },
-      { id: "f1-blanco", sku: "036001010002", slug: "blanco", color: "Blanco", colorHex: "#f2f2f2", price: 1596579.01, images: [f1Blanco, ...catalogImages("12022026", "036001010002", [1,2,3,4,5,6,7])], sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036001010002", available: true },
-      { id: "f1-amarillo", sku: "036001010003", slug: "amarillo", color: "Amarillo", colorHex: "#e5c900", price: 1596579.01, images: [f1Amarillo, ...catalogImages("12022026", "036001010003", [1,2,3,4,5,6,7])], sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036001010003", available: true },
-      { id: "f1-verde", sku: "036001010004", slug: "verde", color: "Verde", colorHex: "#65765a", price: 1596579.01, images: [f1Verde, ...catalogImages("12022026", "036001010004", [1,2,3,4,5,6,7])], sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036001010004", available: true },
+      { id: "f1-negro", sku: "036001010001", slug: "negro", color: "Negro", colorHex: "#171717", price: 1596579.01, images: catalogImages("12022026", "036001010001", [1,2,3,4,5,6,7]), sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036001010001", available: true },
+      { id: "f1-blanco", sku: "036001010002", slug: "blanco", color: "Blanco", colorHex: "#f2f2f2", price: 1596579.01, images: catalogImages("12022026", "036001010002", [1,2,3,4,5,6,7]), sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036001010002", available: true },
+      { id: "f1-amarillo", sku: "036001010003", slug: "amarillo", color: "Amarillo", colorHex: "#e5c900", price: 1596579.01, images: catalogImages("12022026", "036001010003", [1,2,3,4,5,6,7]), sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036001010003", available: true },
+      { id: "f1-verde", sku: "036001010004", slug: "verde", color: "Verde", colorHex: "#65765a", price: 1596579.01, images: catalogImages("12022026", "036001010004", [1,2,3,4,5,6,7]), sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036001010004", available: true },
     ],
   },
   {
@@ -63,7 +53,7 @@ export const products: Product[] = [
       { label: "Suspensión delantera", value: "Horquilla de aleación 12\"" }, { label: "Suspensión trasera", value: "Amortiguador" },
     ],
     variants: [
-      { id: "f2-naranja", sku: "036001010005", slug: "naranja", color: "Naranja", colorHex: "#e67e22", price: 3602353.58, images: [f2Naranja, ...catalogImages("12022026", "036001010005", [1,2,3,4,6,7,8,9,10,11])], sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036001010005", available: true },
+      { id: "f2-naranja", sku: "036001010005", slug: "naranja", color: "Naranja", colorHex: "#e67e22", price: 3602353.58, images: catalogImages("12022026", "036001010005", [1,2,3,4,6,7,8,9,10,11]), sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036001010005", available: true },
     ],
   },
   {
@@ -87,8 +77,8 @@ export const products: Product[] = [
       { label: "Suspensión trasera", value: "FANGZHONG, 200 L, amortiguación con resorte" }, { label: "Dimensiones", value: "1750 × 705 × 977 mm" },
     ],
     variants: [
-      { id: "mantis-p6-negro", sku: "036002010001", slug: "negro", color: "Negro", colorHex: "#171717", price: 2900853.48, images: [mantisNegro, ...catalogImages("02072026", "036002010001", [1,2,3,4,5,6,7,8,9,10,11,12,13])], sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036002010001", available: true },
-      { id: "mantis-p6-verde", sku: "036002010002", slug: "verde", color: "Verde", colorHex: "#7a9a6a", price: 2900853.48, images: [mantisVerde, ...catalogImages("02072026", "036002010002", [1,2,3,4,5,6,7,8,9,10,11,12,13])], sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036002010002", available: true },
+      { id: "mantis-p6-negro", sku: "036002010001", slug: "negro", color: "Negro", colorHex: "#171717", price: 2900853.48, images: catalogImages("02072026", "036002010001", [1,2,3,4,5,6,7,8,9,10,11,12,13]), sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036002010001", available: true },
+      { id: "mantis-p6-verde", sku: "036002010002", slug: "verde", color: "Verde", colorHex: "#7a9a6a", price: 2900853.48, images: catalogImages("02072026", "036002010002", [1,2,3,4,5,6,7,8,9,10,11,12,13]), sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036002010002", available: true },
     ],
   },
   {
@@ -112,8 +102,8 @@ export const products: Product[] = [
       { label: "Tamaño plegada", value: "780 × 550 × 730 mm" }, { label: "Peso", value: "21 kg" }, { label: "Capacidad de carga", value: "110 kg" },
     ],
     variants: [
-      { id: "light-p2-gris", sku: "036002010003", slug: "gris", color: "Gris grafito", colorHex: "#55575a", price: 1643833.74, images: [lightGris, ...catalogImages("26062026", "036002010003", [1,2,3,4])], sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036002010003", available: true },
-      { id: "light-p2-negro", sku: "036002010005", slug: "negro", color: "Negro mate", colorHex: "#151515", price: 1643833.74, images: [lightNegro, ...catalogImages("26062026", "036002010005", [1,2,3,4])], sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036002010005", available: true },
+      { id: "light-p2-gris", sku: "036002010003", slug: "gris", color: "Gris grafito", colorHex: "#55575a", price: 1643833.74, images: catalogImages("26062026", "036002010003", [1,2,3,4]), sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036002010003", available: true },
+      { id: "light-p2-negro", sku: "036002010005", slug: "negro", color: "Negro mate", colorHex: "#151515", price: 1643833.74, images: catalogImages("26062026", "036002010005", [1,2,3,4]), sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036002010005", available: true },
     ],
   },
   {
@@ -137,7 +127,7 @@ export const products: Product[] = [
       { label: "Suspensión trasera", value: "FROZON, 160 L, amortiguación con resorte" }, { label: "Dimensiones", value: "1880 × 720 × 1060 mm" },
     ],
     variants: [
-      { id: "antelope-p5-gris-marron", sku: "036002010004", slug: "gris-marron", color: "Gris / Marrón", colorHex: "#8b6852", price: 3528888.29, images: [antelopeGrisMarron, ...catalogImages("30062026", "036002010004", [1,2,3,4,5,6,7,8,9,10,11])], sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036002010004", available: true },
+      { id: "antelope-p5-gris-marron", sku: "036002010004", slug: "gris-marron", color: "Gris / Marrón", colorHex: "#8b6852", price: 3528888.29, images: catalogImages("30062026", "036002010004", [1,2,3,4,5,6,7,8,9,10,11]), sourceUrl: "https://www.intercap.com.ar/TiendaVirtual/producto/036002010004", available: true },
     ],
   },
 ];

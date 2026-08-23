@@ -42,24 +42,17 @@ export default function Modelos() {
             Compará nuestra línea de movilidad eléctrica y elegí el modelo que mejor
             acompaña tu ritmo, tu recorrido y tu forma de moverte.
           </p>
-          <a href="#modelos" className="models-scroll">Explorar modelos <span>↓</span></a>
         </div>
       </header>
 
       <section className="models-catalog" id="modelos">
         <div className="container">
-          <div className="models-section-heading models-section-heading--catalog">
-            <span>Todos los modelos</span>
-            <h2>Potencia que se adapta a vos</h2>
-          </div>
           <div className="models-list">
-            {products.map((product, index) => {
+            {products.map((product) => {
               return (
                 <article className="model-showcase" id={product.category} key={product.id}>
                   <Link className="model-showcase__visual" to={productUrl(product)}>
-                    <span className="model-showcase__number">{String(index + 1).padStart(2, "0")}</span>
                     <img src={modelImages[product.id] ?? product.variants[0].images[0]} alt={product.name} />
-                    <span className="model-showcase__model">{product.model}</span>
                   </Link>
                   <div className="model-showcase__content">
                     <div className="model-showcase__title">
