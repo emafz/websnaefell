@@ -178,3 +178,22 @@ La interfaz y el flujo local de compra están completos. Antes de publicar una t
 ## Repositorio
 
 [github.com/emafz/websnaefell](https://github.com/emafz/websnaefell)
+
+## Publicación en GitHub Pages
+
+El repositorio incluye el workflow `.github/workflows/deploy-pages.yml`. Cada cambio enviado a `main` compila y publica automáticamente el sitio.
+
+La URL prevista es:
+
+```text
+https://emafz.github.io/websnaefell/
+```
+
+Para activar el primer despliegue:
+
+1. Abre el repositorio en GitHub.
+2. Entra en **Settings → Pages**.
+3. En **Build and deployment → Source**, selecciona **GitHub Actions**.
+4. Envía un cambio a `main` o ejecuta manualmente **Actions → Deploy to GitHub Pages → Run workflow**.
+
+El build utiliza `/websnaefell/` como ruta base y genera `404.html` como fallback para que las rutas internas de React Router puedan abrirse directamente.
