@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import Hero from "../../components/Hero/Hero";
 import landscapeImage from "../../assets/home/paisaje.png";
 import { products } from "../../data/products";
-import adventureImage from "../../../Recursos/Fotos Extra/P6/Negra/DSC04255-scaled.webp";
-import scootersBanner from "../../../Recursos/Banner/01-Monopatines.jpeg";
-import urbanBanner from "../../../Recursos/Banner/02-E-bike-urbana.jpeg";
-import offroadBanner from "../../../Recursos/Banner/03-E-bike-todo-terreno.jpeg";
+import adventureImage from "../../assets/home/adventure-p6.webp";
+import scootersBanner from "../../assets/home/range-scooters.jpeg";
+import urbanBanner from "../../assets/home/range-urban.jpeg";
+import offroadBanner from "../../assets/home/range-offroad.jpeg";
 import "./Home.css";
 
 type IconName = "bolt" | "design" | "shield" | "leaf" | "tools" | "battery" | "support" | "chat";

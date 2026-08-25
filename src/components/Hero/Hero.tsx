@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import heroF1 from "../../assets/hero/Hero-F1.png";
 import heroF2 from "../../assets/hero/Hero-F2.png";
-import heroP2 from "../../../Recursos/Banner/Hero-P2.png";
-import heroP6 from "../../../Recursos/Banner/Hero-P6.png";
-import heroP5 from "../../../Recursos/Banner/Hero-P5.png";
+import heroP2 from "../../assets/hero/Hero-P2.png";
+import heroP6 from "../../assets/hero/Hero-P6.png";
+import heroP5 from "../../assets/hero/Hero-P5.png";
 import "./Hero.css";
 
 const slides = [

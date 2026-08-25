@@ -1,18 +1,18 @@
-import f1Ride from "../../Recursos/Fotos Extra/F1/Contexto/13.webp";
-import f1Fold from "../../Recursos/Fotos Extra/F1/Contexto/18.webp";
-import f1Detail from "../../Recursos/Fotos Extra/F1/Contexto/24.webp";
-import f2Ride from "../../Recursos/Fotos Extra/F2/CONTEXTO/07.jpg";
-import f2Detail from "../../Recursos/Fotos Extra/F2/CONTEXTO/12.webp";
-import f2Utility from "../../Recursos/Fotos Extra/F2/CONTEXTO/17.webp";
-import p6Ride from "../../Recursos/Fotos Extra/P6/1_74e0d9ac-d4b2-4abe-8f90-2e5dd23fbf77_2400x.webp";
-import p6Detail from "../../Recursos/Fotos Extra/P6/Negra/03.webp";
-import p6Battery from "../../Recursos/Fotos Extra/P6/Negra/05.webp";
-import p2Fold from "../../Recursos/Fotos Extra/P2/foldableebike_1800x1800.webp";
-import p2Motor from "../../Recursos/Fotos Extra/P2/marsant_sx_250W_Brushless_Motor.webp";
-import p2Suspension from "../../Recursos/Fotos Extra/P2/marsant_sx_Suspension.webp";
-import p5Ride from "../../Recursos/Fotos Extra/P5/1_586ca04a-daa0-4b5a-b07c-84d8650ebd0c_2400x.webp";
-import p5Shifter from "../../Recursos/Fotos Extra/P5/HENTACH_7-speed_Shifter.webp";
-import p5Saddle from "../../Recursos/Fotos Extra/P5/Well-built_Saddle.webp";
+import f1Ride from "../assets/products/editorial/f1-ride.webp";
+import f1Fold from "../assets/products/editorial/f1-fold.webp";
+import f1Detail from "../assets/products/editorial/f1-detail.webp";
+import f2Ride from "../assets/products/editorial/f2-ride.jpg";
+import f2Detail from "../assets/products/editorial/f2-detail.webp";
+import f2Utility from "../assets/products/editorial/f2-utility.webp";
+import p6Ride from "../assets/products/editorial/p6-ride.webp";
+import p6Detail from "../assets/products/editorial/p6-detail.webp";
+import p6Battery from "../assets/products/editorial/p6-battery.webp";
+import p2Fold from "../assets/products/editorial/p2-fold.webp";
+import p2Motor from "../assets/products/editorial/p2-motor.webp";
+import p2Suspension from "../assets/products/editorial/p2-suspension.webp";
+import p5Ride from "../assets/products/editorial/p5-ride.webp";
+import p5Shifter from "../assets/products/editorial/p5-shifter.webp";
+import p5Saddle from "../assets/products/editorial/p5-saddle.webp";
 
 export interface ProductStory {
   eyebrow: string;
