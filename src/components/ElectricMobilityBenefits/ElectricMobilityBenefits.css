@@ -1,0 +1,10 @@
+.mobility-benefits { background:rgba(0,0,15,.38); }
+.mobility-benefits h2 { margin:20px 0 12px; font-size:clamp(2.1rem,4vw,3.5rem); font-weight:400; }
+.mobility-benefits__intro { max-width:680px; margin:0 0 38px; color:var(--color-paper-2); font-size:1.05rem; line-height:1.7; }
+.mobility-benefits__grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+.mobility-benefits article { min-height:240px; padding:30px; border:1px solid rgba(132,102,255,.24); border-radius:16px; background:linear-gradient(145deg,rgba(16,25,54,.92),rgba(26,10,73,.7)); }
+.mobility-benefits svg { width:42px; height:42px; margin-bottom:30px; color:#a568ff; }
+.mobility-benefits h3 { margin:0 0 12px; font-size:1.05rem; }
+.mobility-benefits article p { margin:0; color:#c8ced9; line-height:1.6; font-size:.9rem; }
+@media(max-width:900px){.mobility-benefits__grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.mobility-benefits__grid{grid-template-columns:1fr}.mobility-benefits article{min-height:0}}

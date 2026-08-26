@@ -1,0 +1,19 @@
+# Snaefell
+
+Sitio oficial de movilidad eléctrica Snaefell.
+
+## Modelos
+
+- https://emafz.github.io/websnaefell/modelos
+- https://emafz.github.io/websnaefell/modelos/bestride-f1
+- https://emafz.github.io/websnaefell/modelos/bestride-pro-f2
+- https://emafz.github.io/websnaefell/modelos/mantis-p6
+- https://emafz.github.io/websnaefell/modelos/light-p2
+- https://emafz.github.io/websnaefell/modelos/antelope-p5
+
+## Información
+
+- https://emafz.github.io/websnaefell/nosotros
+- https://emafz.github.io/websnaefell/novedades
+
+Este archivo es una ayuda experimental para sistemas de IA y no garantiza visibilidad ni posicionamiento.

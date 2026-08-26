@@ -1,20 +1,20 @@
 import { Link } from "react-router-dom";
 import type { Product } from "../../types/Product";
-import { formatCurrency } from "../../utils/currency";
+import { trackEvent } from "../../utils/analytics";
 import "./ProductCard.css";
 
 export default function ProductCard({ product }: { product: Product }) {
   const variant = product.variants[0];
-  const minPrice = Math.min(...product.variants.map((item) => item.price));
+  const productUrl = `/modelos/${product.slug}/${variant.slug}`;
 
   return (
     <article className="product-card">
-      <Link to={`/tienda/${product.slug}/${variant.slug}`} className="product-card__media">
-        <img src={variant.images[0]} alt={`${product.name} ${variant.color}`} />
+      <Link to={productUrl} className="product-card__media" onClick={() => trackEvent("select_model", { product_name:product.name, product_model:product.model, cta_location:"model_card" })}>
+        <img src={variant.images[0]} alt={`${product.name} en color ${variant.color}`} loading="lazy" />
       </Link>
       <div className="product-card__body">
         <div className="product-card__meta">
-          <span>{product.category === "monopatin" ? "Monopatin electrico" : "Bicicleta electrica"}</span>
+          <span>{product.category === "monopatin" ? "Monopatín eléctrico" : "Bicicleta eléctrica"}</span>
           <span>{product.model}</span>
         </div>
         <h3>{product.name}</h3>
@@ -26,11 +26,8 @@ export default function ProductCard({ product }: { product: Product }) {
           <small>{product.variants.length} {product.variants.length === 1 ? "color" : "colores"}</small>
         </div>
         <div className="product-card__footer">
-          <div>
-            <small>Desde</small>
-            <strong>{formatCurrency(minPrice)}</strong>
-          </div>
-          <Link className="product-card__arrow" to={`/tienda/${product.slug}/${variant.slug}`} aria-label={`Ver ${product.name}`}>-&gt;</Link>
+          <strong>Conocé el modelo</strong>
+          <Link className="product-card__arrow" to={productUrl} aria-label={`Conocé ${product.name}`}>-&gt;</Link>
         </div>
       </div>
     </article>

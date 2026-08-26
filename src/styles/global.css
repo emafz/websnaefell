@@ -42,6 +42,13 @@ h1, h2, h3, h4, h5, h6 {
 .section--dark { background: var(--color-black); color: var(--color-white); }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 22px; border: 1px solid transparent; border-radius: 999px; font-weight: 800; transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition); }
 .button:hover { transform: translateY(-1px); }
+.button:focus-visible,
+a:focus-visible,
+button:focus-visible,
+select:focus-visible {
+  outline: 3px solid #8ff0b3;
+  outline-offset: 3px;
+}
 .button--primary { background: var(--color-accent); color: var(--color-white); box-shadow:0 12px 30px rgba(90,24,234,.28); }
 .button--primary:hover { background: var(--color-accent-dark); }
 .button--dark { background: var(--color-black); color: var(--color-white); }
@@ -49,25 +56,16 @@ h1, h2, h3, h4, h5, h6 {
 .button--wide { width: 100%; }
 .muted { color: var(--color-muted); }
 
-/* Fondo institucional compartido por todas las rutas. Las superficies de compra
-   permanecen claras para conservar contraste y una lectura cómoda. */
-.store-page,
-.cart-page,
+/* Fondo institucional compartido por todas las rutas públicas. */
 .about-page,
 .models-page,
 .product-page,
 .not-found,
-.success-page,
-.news-page,
-.checkout-page { background: transparent; color: var(--color-white); }
+.news-page { background: transparent; color: var(--color-white); }
 
-.store-page .muted,
-.cart-page .muted,
 .about-page .muted,
 .models-page .muted,
 .product-page .muted,
-.checkout-page .muted,
-.store-hero p,
 .models-intro,
 .product-tagline,
 .product-description,
@@ -76,10 +74,6 @@ h1, h2, h3, h4, h5, h6 {
 .breadcrumbs { color: var(--color-paper-2); }
 
 .product-card,
-.cart-empty,
-.checkout-form,
-.checkout-summary,
-.success-card,
 .product-gallery,
 .product-info { color: var(--color-text); }
 

@@ -10,6 +10,9 @@ export const products: Product[] = [
     shortDescription: "Monopatín eléctrico urbano con motor brushless de 500 W, autonomía de hasta 40 km y tres modos de conducción.",
     description: "Un vehículo compacto y versátil para trayectos urbanos. Combina estructura plegable, asiento desmontable, suspensión y frenos de disco en ambas ruedas.",
     featured: true,
+    recommendedUse: ["city", "portable", "daily"],
+    recommendedFor: ["Buscás una alternativa compacta para recorridos urbanos.", "Valorás una estructura plegable y un asiento desmontable.", "Querés elegir entre distintos modos de conducción."],
+    relatedGuides: ["como-elegir-bicicleta-electrica", "autonomia-bicicleta-electrica", "cuidar-bateria-ebike"],
     features: [
       { label: "Motor", value: "500 W", highlight: true },
       { label: "Velocidad máxima", value: "40 km/h", highlight: true },
@@ -38,6 +41,9 @@ export const products: Product[] = [
     tagline: "Deportivo & aventurero", shortDescription: "Monopatín eléctrico de tres ruedas con 1000 W de potencia total, hasta 55 km/h y autonomía de 45 km.",
     description: "Pensado para una conducción estable y potente. Su configuración de tres ruedas, estructura reforzada y equipamiento completo priorizan control y comodidad.",
     featured: true,
+    recommendedUse: ["city", "power", "daily"],
+    recommendedFor: ["Buscás una configuración de tres ruedas.", "Priorizás una estructura reforzada y una conducción estable.", "Querés mayor potencia para tus recorridos cotidianos."],
+    relatedGuides: ["potencia-bicicleta-electrica", "autonomia-bicicleta-electrica", "cuidar-bateria-ebike"],
     features: [
       { label: "Motor", value: "1000 W", highlight: true }, { label: "Velocidad máxima", value: "55 km/h", highlight: true },
       { label: "Autonomía", value: "45 km", highlight: true }, { label: "Batería", value: "48 V / 23,4 Ah", highlight: true },
@@ -61,6 +67,9 @@ export const products: Product[] = [
     tagline: "Potencia para ir más allá", shortDescription: "Bicicleta eléctrica con motor de 750 W, neumáticos Fat 20 × 4 y frenos hidráulicos de 180 mm.",
     description: "Una e-bike robusta con cuadro de aluminio 6061, doble suspensión y componentes pensados para combinar ciudad y recorridos de mayor exigencia.",
     featured: true,
+    recommendedUse: ["long-range", "power", "uneven-terrain"],
+    recommendedFor: ["Buscás una bicicleta robusta con neumáticos Fat.", "Transitás caminos irregulares y valorás la doble suspensión.", "Realizás recorridos prolongados y querés administrar la asistencia."],
+    relatedGuides: ["que-es-bicicleta-electrica-fat-bike", "autonomia-bicicleta-electrica", "cuidar-bateria-ebike"],
     features: [
       { label: "Motor", value: "750 W", highlight: true }, { label: "Velocidad máxima", value: "45 / 55 km/h", highlight: true },
       { label: "Autonomía", value: "65 / 115 km", highlight: true }, { label: "Batería", value: "48 V / 20 Ah", highlight: true },
@@ -86,6 +95,9 @@ export const products: Product[] = [
     tagline: "Compacta. Eléctrica. Urbana.", shortDescription: "Bicicleta eléctrica plegable de 250 W con autonomía de hasta 35 km y cuadro de aleación de magnesio.",
     description: "Ligera, plegable y fácil de transportar. Una propuesta para movilidad urbana cotidiana con iluminación LED, pantalla LCD y frenos a disco.",
     featured: true,
+    recommendedUse: ["city", "portable", "daily"],
+    recommendedFor: ["Necesitás una bicicleta compacta para la ciudad.", "Tenés poco espacio de guardado o combinás medios de transporte.", "Priorizás bajo peso y formato plegable."],
+    relatedGuides: ["ventajas-bicicleta-electrica-plegable", "como-elegir-bicicleta-electrica", "pedaleo-asistido"],
     features: [
       { label: "Motor", value: "250 W", highlight: true }, { label: "Velocidad máxima", value: "25 km/h", highlight: true },
       { label: "Autonomía", value: "Hasta 35 km", highlight: true }, { label: "Peso", value: "21 kg", highlight: true },
@@ -111,6 +123,9 @@ export const products: Product[] = [
     tagline: "Aventura en movimiento", shortDescription: "Bicicleta eléctrica de 750 W con neumáticos Fat de 24 pulgadas, doble suspensión y frenos hidráulicos.",
     description: "Una bicicleta eléctrica de gran porte para quienes buscan estabilidad, autonomía y capacidad de adaptación a distintos terrenos.",
     featured: true,
+    recommendedUse: ["long-range", "power", "uneven-terrain"],
+    recommendedFor: ["Buscás estabilidad y neumáticos Fat de gran porte.", "Alternás ciudad con caminos de superficie irregular.", "Valorás una posición amplia, doble suspensión y frenos hidráulicos."],
+    relatedGuides: ["que-es-bicicleta-electrica-fat-bike", "autonomia-bicicleta-electrica", "potencia-bicicleta-electrica"],
     features: [
       { label: "Motor", value: "750 W", highlight: true }, { label: "Velocidad máxima", value: "45 / 55 km/h", highlight: true },
       { label: "Autonomía", value: "Hasta 65 km", highlight: true }, { label: "Batería", value: "48 V / 20 Ah", highlight: true },

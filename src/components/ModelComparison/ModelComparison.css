@@ -1,0 +1,9 @@
+.model-comparison { padding-top:90px; scroll-margin-top:90px; }
+.model-comparison__intro { max-width:720px; margin:-18px 0 30px; color:#c5d2e8; line-height:1.65; }
+.model-comparison__scroll { overflow-x:auto; border:1px solid rgba(97,216,255,.18); border-radius:14px; }
+.model-comparison table { width:100%; min-width:900px; border-collapse:collapse; background:rgba(4,16,39,.88); }
+.model-comparison th,.model-comparison td { padding:18px; border:1px solid rgba(255,255,255,.1); text-align:left; }
+.model-comparison thead th { color:#61d8ff; font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }
+.model-comparison tbody th { color:#aebbd0; font-size:.78rem; }
+.model-comparison td { color:#fff; font-weight:600; }
+@media(max-width:700px){.model-comparison{padding-top:60px}.model-comparison__scroll{margin-right:-14px;border-radius:12px 0 0 12px}}

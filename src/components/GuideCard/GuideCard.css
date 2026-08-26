@@ -1,0 +1,5 @@
+.guide-card { overflow:hidden; border:1px solid rgba(132,102,255,.24); border-radius:15px; background:rgba(3,11,28,.9); }
+.guide-card__image { display:block; aspect-ratio:16/10; overflow:hidden; }
+.guide-card__image img { width:100%; height:100%; object-fit:cover; transition:transform .35s ease; }.guide-card:hover .guide-card__image img{transform:scale(1.025)}
+.guide-card__body { padding:24px; }.guide-card__body>span{color:#75d6ff;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.guide-card h3 { margin:14px 0 10px; font-size:1.35rem; line-height:1.25; }.guide-card p{margin:0 0 22px;color:#c8ced9;line-height:1.6;font-size:.88rem}.guide-card__link{color:#b88cff;font-weight:800;font-size:.82rem}

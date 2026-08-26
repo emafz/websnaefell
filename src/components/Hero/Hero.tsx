@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import WhatsAppCTA from "../WhatsAppCTA/WhatsAppCTA";
 import heroF1 from "../../assets/hero/Hero-F1.png";
 import heroF2 from "../../assets/hero/Hero-F2.png";
 import heroP2 from "../../assets/hero/Hero-P2.png";
@@ -10,9 +11,9 @@ import "./Hero.css";
 const slides = [
   { src: heroF1, alt: "Conductor junto a un monopatín eléctrico Snaefell Bestride F1", model: "BESTRIDE F1", title: "Movimiento sin límites", description: "Diseño, potencia y libertad para transformar cada trayecto en una experiencia propia.", features: [["500 W", "POTENCIA"], ["40 KM", "AUTONOMÍA"], ["40 KM/H", "VELOCIDAD MÁX."], ["120 KG", "CARGA MÁX."]] },
   { src: heroF2, alt: "Conductora en un monopatín eléctrico de tres ruedas Snaefell Bestride Pro F2", model: "BESTRIDE PRO F2", title: "Potencia para tu día a día", description: "Desde la ciudad hasta nuevos caminos, Snaefell acompaña cada trayecto con libertad y confianza.", features: [["1000 W", "POTENCIA"], ["45 KM", "AUTONOMÍA"], ["55 KM/H", "VELOCIDAD MÁX."], ["150 KG", "CARGA MÁX."]] },
-  { src: heroP2, alt: "Ciclista urbano en una bicicleta electrica Snaefell", model: "LIGHT P2", title: "Elegí cómo moverte", description: "Vehículos eléctricos diseñados para acompañarte con estilo, rendimiento y libertad en cada recorrido.", features: [["250 W", "POTENCIA"], ["35 KM", "AUTONOMIA"], ["16 × 1,95", "NEUMATICOS"], ["21 KG", "PESO"]] },
-  { src: heroP5, alt: "Bicicleta electrica Snaefell sobre un paisaje rocoso", model: "ANTELOPE P5", title: "Libertad para descubrir más", description: "Cada modelo Snaefell está pensado para ofrecer autonomía, diseño y una experiencia de movimiento superior.", features: [["750 W", "POTENCIA"], ["65 KM", "AUTONOMIA MAX."], ["24 × 4,0", "NEUMATICOS FAT"], ["120 KG", "CARGA MAX."]] },
-  { src: heroP6, alt: "Bicicleta electrica Snaefell en la montana", model: "MANTIS P6", title: "Tecnología que te impulsa", description: "Soluciones de movilidad eléctrica creadas para llevarte más lejos, con diseño y confianza en cada detalle.", features: [["750 W", "POTENCIA"], ["115 KM", "AUTONOMIA MAX."], ["20 × 4,0", "NEUMATICOS FAT"], ["120 KG", "CARGA MAX."]] },
+  { src: heroP2, alt: "Ciclista urbano en una bicicleta eléctrica Snaefell Light P2", model: "LIGHT P2", title: "Elegí cómo moverte", description: "Vehículos eléctricos diseñados para acompañarte con estilo, rendimiento y libertad en cada recorrido.", features: [["250 W", "POTENCIA"], ["35 KM", "AUTONOMÍA"], ["16 × 1,95", "NEUMÁTICOS"], ["21 KG", "PESO"]] },
+  { src: heroP5, alt: "Bicicleta eléctrica Snaefell Antelope P5 sobre un paisaje rocoso", model: "ANTELOPE P5", title: "Libertad para descubrir más", description: "Cada modelo Snaefell está pensado para ofrecer autonomía, diseño y una experiencia de movimiento superior.", features: [["750 W", "POTENCIA"], ["65 KM", "AUTONOMÍA MÁX."], ["24 × 4,0", "NEUMÁTICOS FAT"], ["120 KG", "CARGA MÁX."]] },
+  { src: heroP6, alt: "Bicicleta eléctrica Snaefell Mantis P6 en la montaña", model: "MANTIS P6", title: "Tecnología que te impulsa", description: "Soluciones de movilidad eléctrica creadas para llevarte más lejos, con diseño y confianza en cada detalle.", features: [["750 W", "POTENCIA"], ["115 KM", "AUTONOMÍA MÁX."], ["20 × 4,0", "NEUMÁTICOS FAT"], ["120 KG", "CARGA MÁX."]] },
 ];
 
 export default function Hero() {
@@ -43,6 +44,8 @@ export default function Hero() {
             src={slide.src}
             alt={index === activeSlide ? slide.alt : ""}
             aria-hidden={index !== activeSlide}
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchPriority={index === 0 ? "high" : "auto"}
             key={slide.src}
           />
         ))}
@@ -56,7 +59,7 @@ export default function Hero() {
           <h1>{slides[activeSlide].title}</h1>
           <p>{slides[activeSlide].description}</p>
           <div className="hero-actions">
-            <Link className="button button--primary" to="/tienda">Comprar online</Link>
+            <WhatsAppCTA location="hero" label="Recibir asesoramiento" message="Hola, quiero recibir asesoramiento para elegir un modelo Snaefell." />
             <Link className="button hero-secondary" to="/modelos">Explorar modelos</Link>
           </div>
         </div>

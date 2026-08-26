@@ -1,14 +1,16 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import Nosotros from "../pages/Nosotros/Nosotros";
 import Modelos from "../pages/Modelos/Modelos";
 import Novedades from "../pages/Novedades/Novedades";
-import Tienda from "../pages/Tienda/Tienda";
 import ProductDetail from "../pages/Tienda/ProductDetail/ProductDetail";
-import Carrito from "../pages/Carrito/Carrito";
-import Checkout from "../pages/Checkout/Checkout";
-import CompraExitosa from "../pages/CompraExitosa/CompraExitosa";
 import NotFound from "../pages/NotFound/NotFound";
+import GuideDetail from "../pages/GuideDetail/GuideDetail";
+
+function LegacyProductRedirect() {
+  const { productSlug, variantSlug } = useParams();
+  return <Navigate replace to={`/modelos/${productSlug}${variantSlug ? `/${variantSlug}` : ""}`} />;
+}
 
 export default function AppRoutes() {
   return (
@@ -16,13 +18,15 @@ export default function AppRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/nosotros" element={<Nosotros />} />
       <Route path="/modelos" element={<Modelos />} />
+      <Route path="/modelos/:productSlug/:variantSlug?" element={<ProductDetail />} />
       <Route path="/novedades" element={<Novedades />} />
-      <Route path="/tienda" element={<Tienda />} />
-      <Route path="/tienda/categoria/:category" element={<Tienda />} />
-      <Route path="/tienda/:productSlug/:variantSlug?" element={<ProductDetail />} />
-      <Route path="/carrito" element={<Carrito />} />
-      <Route path="/checkout" element={<Checkout />} />
-      <Route path="/compra-exitosa" element={<CompraExitosa />} />
+      <Route path="/novedades/:guideSlug" element={<GuideDetail />} />
+      <Route path="/tienda" element={<Navigate replace to="/modelos" />} />
+      <Route path="/tienda/categoria/:category" element={<Navigate replace to="/modelos" />} />
+      <Route path="/tienda/:productSlug/:variantSlug?" element={<LegacyProductRedirect />} />
+      <Route path="/carrito" element={<Navigate replace to="/modelos" />} />
+      <Route path="/checkout" element={<Navigate replace to="/modelos" />} />
+      <Route path="/compra-exitosa" element={<Navigate replace to="/modelos" />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

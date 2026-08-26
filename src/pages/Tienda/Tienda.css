@@ -1,5 +1,0 @@
-.store-page { padding-bottom:90px; }
-.store-hero { padding-top:90px; padding-bottom:50px; }
-.store-hero h1 { max-width:950px; font-size:clamp(2.25rem,4vw,3.25rem); line-height:1.08; letter-spacing:-.025em; margin:20px 0 28px; }
-.store-hero p { max-width:640px; color:var(--color-muted); line-height:1.7; }
-.store-catalog { padding-top:10px; }

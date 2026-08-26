@@ -6,6 +6,15 @@ import bestrideProF2 from "../../assets/models/bestride-pro-f2.png";
 import mantisP6 from "../../assets/models/mantis-p6.png";
 import lightP2 from "../../assets/models/light-p2.png";
 import antelopeP5 from "../../assets/models/antelope-p5.png";
+import ModelComparison from "../../components/ModelComparison/ModelComparison";
+import TrustBenefits from "../../components/TrustBenefits/TrustBenefits";
+import SEO from "../../components/SEO/SEO";
+import { absoluteUrl } from "../../utils/site";
+import { trackEvent } from "../../utils/analytics";
+import ModelFinder from "../../components/ModelFinder/ModelFinder";
+import BatteryEducation from "../../components/BatteryEducation/BatteryEducation";
+import FAQSection from "../../components/FAQSection/FAQSection";
+import { generalPurchaseFaq } from "../../data/faqs";
 import "./Modelos.css";
 
 const modelImages: Record<string, string> = {
@@ -28,12 +37,13 @@ function FeatureIcon({ index }: { index: number }) {
 }
 
 function productUrl(product: Product) {
-  return `/tienda/${product.slug}/${product.variants[0].slug}`;
+  return `/modelos/${product.slug}/${product.variants[0].slug}`;
 }
 
 export default function Modelos() {
   return (
     <main className="models-page">
+      <SEO title="Modelos Snaefell | Bicicletas y Monopatines Eléctricos" description="Compará bicicletas y monopatines eléctricos Snaefell por potencia, autonomía y uso. Conocé cada modelo y consultá por WhatsApp." path="/modelos" structuredData={{ "@context":"https://schema.org", "@type":"ItemList", name:"Modelos Snaefell", itemListElement:products.map((product,index) => ({ "@type":"ListItem", position:index+1, name:product.name, url:absoluteUrl(`/modelos/${product.slug}`) })) }} />
       <header className="models-hero">
         <div className="container models-hero__content">
           <span className="eyebrow">Gama Snaefell</span>
@@ -51,7 +61,7 @@ export default function Modelos() {
             {products.map((product) => {
               return (
                 <article className="model-showcase" id={product.category} key={product.id}>
-                  <Link className="model-showcase__visual" to={productUrl(product)}>
+                  <Link className="model-showcase__visual" to={productUrl(product)} onClick={() => trackEvent("select_model", { product_name:product.name, product_model:product.model, cta_location:"model_card" })}>
                     <img src={modelImages[product.id] ?? product.variants[0].images[0]} alt={product.name} />
                   </Link>
                   <div className="model-showcase__content">
@@ -78,15 +88,22 @@ export default function Modelos() {
                         ))}
                         <span>{product.variants.length} {product.variants.length === 1 ? "color" : "colores"}</span>
                       </div>
-                      <Link className="button button--primary" to={productUrl(product)}>Ver producto <span>→</span></Link>
+                      <Link className="button button--primary" to={productUrl(product)} onClick={() => trackEvent("select_model", { product_name:product.name, product_model:product.model, cta_location:"model_card" })}>Ver modelo <span>→</span></Link>
                     </div>
                   </div>
                 </article>
               );
             })}
           </div>
+          <ModelComparison />
+          <div className="models-trust"><TrustBenefits /></div>
         </div>
       </section>
+
+      <ModelFinder />
+      <BatteryEducation compact />
+
+      <section className="section"><div className="container"><FAQSection title="Antes de elegir tu Snaefell" intro="Respuestas generales para comparar con más claridad. Para condiciones comerciales vigentes, consultá con nuestro equipo." items={generalPurchaseFaq}/></div></section>
 
       <section className="models-guide section">
         <div className="container models-guide__layout">

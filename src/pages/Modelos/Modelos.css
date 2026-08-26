@@ -12,6 +12,7 @@
 .models-section-heading h2 { max-width:680px; margin:0; font-size:clamp(2rem,3.5vw,3.25rem); line-height:1.1; letter-spacing:-.025em; text-align:right; }
 .models-catalog { padding:40px 0 105px; background:radial-gradient(circle at 90% 18%,rgba(90,24,234,.25),transparent 28rem),linear-gradient(135deg,#000817 0%,#061b3b 52%,#180947 100%); }
 .models-list { display:grid; gap:36px; }
+.models-trust { padding-top:90px; }
 .model-showcase { display:grid; grid-template-columns:minmax(0,1.08fr) minmax(430px,.92fr); height:550px; max-height:550px; background:linear-gradient(145deg,rgba(5,30,66,.98),rgba(9,9,39,.98)); color:var(--color-white); border:1px solid rgba(87,133,213,.3); border-radius:var(--radius-md); overflow:hidden; box-shadow:0 30px 80px rgba(0,0,15,.42),0 0 45px rgba(39,100,210,.08); scroll-margin-top:100px; }
 .model-showcase__visual { display:flex; align-items:center; justify-content:center; min-width:0; background:#031128; position:relative; overflow:hidden; }
 .model-showcase__visual::before { content:""; position:absolute; z-index:2; inset:0; background:linear-gradient(180deg,rgba(1,9,25,.05) 45%,rgba(1,9,25,.62) 100%); pointer-events:none; }

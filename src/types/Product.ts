@@ -1,4 +1,5 @@
 export type ProductCategory = "monopatin" | "bicicleta";
+export type RecommendedUse = "city" | "long-range" | "power" | "portable" | "uneven-terrain" | "daily";
 
 export interface ProductFeature {
   label: string;
@@ -29,6 +30,9 @@ export interface Product {
   shortDescription: string;
   description?: string;
   featured?: boolean;
+  recommendedUse: RecommendedUse[];
+  recommendedFor: string[];
+  relatedGuides: string[];
   features: ProductFeature[];
   specifications: ProductFeature[];
   variants: ProductVariant[];

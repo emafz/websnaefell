@@ -1,0 +1,18 @@
+.battery-education { background:linear-gradient(135deg,rgba(4,15,35,.96),rgba(35,11,91,.88)); }
+.battery-education__layout { display:grid; grid-template-columns:1.1fr .9fr; gap:55px; align-items:center; }
+.battery-education h2 { margin:20px 0; font-size:clamp(2rem,3.7vw,3.35rem); font-weight:400; }
+.battery-education__layout>div>p { max-width:680px; color:#c8ced9; line-height:1.75; }
+.battery-education__cards { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:28px; }
+.battery-education__cards article { padding:22px; border:1px solid rgba(137,95,255,.25); border-radius:14px; background:rgba(3,11,28,.62); }
+.battery-education__cards svg { width:32px; height:32px; color:#a568ff; }
+.battery-education__cards h3 { margin:14px 0 8px; }
+.battery-education__cards p { margin:0; color:#c8ced9; font-size:.82rem; line-height:1.55; }
+.range-explainer { padding:28px; border:1px solid rgba(130,105,255,.32); border-radius:18px; background:rgba(3,7,25,.72); }
+.range-explainer>div:not(.range-explainer__bar) { display:flex; justify-content:space-between; gap:12px; font-size:.78rem; }
+.range-explainer b { color:#bba6ec; }.range-explainer strong{color:#75d6ff}
+.range-explainer__bar { display:grid; grid-template-columns:repeat(4,1fr); gap:5px; margin:20px 0; }
+.range-explainer__bar i { height:10px; border-radius:99px; background:#54d6d0; }.range-explainer__bar i:nth-child(2){background:#5d9dff}.range-explainer__bar i:nth-child(3){background:#8e61ff}.range-explainer__bar i:nth-child(4){background:#bd52e8}
+.battery-education__cta { margin-top:16px; padding:24px; border-radius:16px; background:rgba(90,24,234,.22); }
+.battery-education__cta h3 { margin:0 0 18px; font-size:1.15rem; line-height:1.4; }
+@media(max-width:900px){.battery-education__layout{grid-template-columns:1fr}}
+@media(max-width:560px){.battery-education__cards{grid-template-columns:1fr}.range-explainer>div:not(.range-explainer__bar){flex-direction:column}.battery-education__cta .whatsapp-cta{width:100%}}

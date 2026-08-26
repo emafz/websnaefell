@@ -1,0 +1,1 @@
+.related-guides>h2{margin:0 0 25px;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400}.related-guides>div{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}@media(max-width:800px){.related-guides>div{grid-template-columns:1fr}}
