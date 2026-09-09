@@ -8,5 +8,6 @@
 .product-gallery__thumbs img { width:100%; height:100%; object-fit:contain; }
 .product-gallery__arrow { width:42px; height:42px; padding:0; display:grid; place-items:center; border:1px solid rgba(255,255,255,.3); border-radius:50%; background:rgba(8,11,35,.88); color:#fff; font-size:1.2rem; transition:background var(--transition),border-color var(--transition),opacity var(--transition); }
 .product-gallery__arrow:hover:not(:disabled) { border-color:var(--color-accent); background:var(--color-accent); }
+.product-gallery__arrow svg { width:22px; height:22px; }
 .product-gallery__arrow:disabled { cursor:default; opacity:.3; }
 @media(max-width:700px){ .product-gallery__thumb-navigation{gap:6px}.product-gallery__arrow{width:36px;height:36px}.product-gallery__thumbs button{width:68px;height:68px;flex-basis:68px} }

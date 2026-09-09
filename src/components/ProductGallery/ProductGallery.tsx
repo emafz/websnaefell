@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import "./ProductGallery.css";
 
 export default function ProductGallery({ images, alt }: { images: string[]; alt: string }) {
@@ -21,7 +22,7 @@ export default function ProductGallery({ images, alt }: { images: string[]; alt:
       {images.length > 1 && (
         <div className="product-gallery__thumb-navigation">
           {images.length > 6 && (
-            <button className="product-gallery__arrow" type="button" onClick={() => selectImage(activeImage - 1)} disabled={activeImage === 0} aria-label="Imagen anterior">&#8592;</button>
+            <button className="product-gallery__arrow" type="button" onClick={() => selectImage(activeImage - 1)} disabled={activeImage === 0} aria-label="Imagen anterior"><ChevronLeft aria-hidden="true" /></button>
           )}
           <div className="product-gallery__thumbs" ref={thumbsRef} aria-label={`Galeria de ${alt}`}>
             {images.map((image, index) => (
@@ -38,7 +39,7 @@ export default function ProductGallery({ images, alt }: { images: string[]; alt:
             ))}
           </div>
           {images.length > 6 && (
-            <button className="product-gallery__arrow" type="button" onClick={() => selectImage(activeImage + 1)} disabled={activeImage === images.length - 1} aria-label="Imagen siguiente">&#8594;</button>
+            <button className="product-gallery__arrow" type="button" onClick={() => selectImage(activeImage + 1)} disabled={activeImage === images.length - 1} aria-label="Imagen siguiente"><ChevronRight aria-hidden="true" /></button>
           )}
         </div>
       )}

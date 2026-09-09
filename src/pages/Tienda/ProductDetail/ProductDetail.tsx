@@ -1,5 +1,6 @@
 import { useEffect, useMemo } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
 import ColorSelector from "../../../components/ColorSelector/ColorSelector";
 import ProductFeatures from "../../../components/ProductFeatures/ProductFeatures";
@@ -9,7 +10,7 @@ import SEO from "../../../components/SEO/SEO";
 import ShareButton from "../../../components/ShareButton/ShareButton";
 import TrustBenefits from "../../../components/TrustBenefits/TrustBenefits";
 import WhatsAppCTA from "../../../components/WhatsAppCTA/WhatsAppCTA";
-import BatteryEducation, { autonomyNote } from "../../../components/BatteryEducation/BatteryEducation";
+import BatteryEducation from "../../../components/BatteryEducation/BatteryEducation";
 import FAQSection from "../../../components/FAQSection/FAQSection";
 import Icon from "../../../components/Icon/Icon";
 import RelatedGuides from "../../../components/RelatedGuides/RelatedGuides";
@@ -49,7 +50,6 @@ export default function ProductDetail() {
     ] },
   ];
   const whatsappProps = { productName:product.name, model:product.model, sku:variant.sku, color:variant.color };
-  const hasAutonomy = product.features.some((feature)=>feature.label.toLowerCase().includes("autonom"));
 
   return <div className="product-page">
     <SEO title={seoTitle} description={seoDescription} path={canonicalPath} image={variant.images[0]} type="product" structuredData={structuredData} />
@@ -62,17 +62,17 @@ export default function ProductDetail() {
           <h1>{product.name}</h1><p className="product-tagline">{product.tagline}</p>
           <p className="product-description">{product.shortDescription}</p>
           <ProductFeatures features={product.features.slice(0, 5)} />
-          {hasAutonomy && <p className="product-autonomy-note">* {autonomyNote}</p>}
           <div className="product-price"><small>Precio de referencia</small>{formatCurrency(variant.price)}</div>
           <div className="product-option"><div className="product-option__label"><strong>Color</strong><span>{variant.color} · SKU {variant.sku}</span></div><ColorSelector variants={product.variants} selectedId={variant.id} onChange={(next) => navigate(`/modelos/${product.slug}/${next.slug}`)} /></div>
+          {variant.available === false && <p className="product-stock">Consultá disponibilidad para el color {variant.color}.</p>}
           <WhatsAppCTA className="product-whatsapp" location="product_hero" {...whatsappProps} />
           <p className="product-consult-note">Consultá disponibilidad, formas de pago y opciones de entrega con nuestro equipo.</p>
           <ShareButton title={`Snaefell ${product.name}`} text={product.shortDescription} url={canonicalUrl} />
         </div>
       </div>
     </div>
-    <section className="section recommended-for"><div className="container"><span className="eyebrow">Uso recomendado</span><h2>Ideal para vos si...</h2><div>{product.recommendedFor.map((item)=><article key={item}><Icon name="check"/><p>{item}</p></article>)}</div></div></section>
-    <section className="section product-trust"><div className="container"><span className="eyebrow">Respaldo Snaefell</span><h2>Te acompañamos antes y después de elegir.</h2><TrustBenefits /></div></section>
+    <section className="section recommended-for"><div className="container"><h2>Ideal para vos si...</h2><div>{product.recommendedFor.map((item)=><article key={item}><Icon name="check"/><p>{item}</p></article>)}</div></div></section>
+    <section className="section product-trust"><div className="container"><h2>Te acompañamos antes y después de elegir.</h2><TrustBenefits /></div></section>
     <section className="product-performance"><div className="container"><span className="eyebrow">Características principales</span><h2>{product.description}</h2><ProductFeatures features={product.features}/></div></section>
     <BatteryEducation productName={product.name} model={product.model}/>
     {detail && <section className="product-editorial" aria-label={`Detalles de ${product.name}`}>
@@ -82,11 +82,11 @@ export default function ProductDetail() {
         <div className="product-story__copy"><span>{story.eyebrow}</span><h3>{story.title}</h3><p>{story.text}</p></div>
       </article>)}</div>
     </section>}
-    <section className="section"><div className="container spec-layout"><div><span className="eyebrow">Ficha técnica</span><h2>Especificaciones técnicas</h2></div><dl>{product.specifications.map((spec)=><div key={spec.label}><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}</dl></div></section>
-    <section className="section product-learning"><div className="container"><span className="eyebrow">Antes de elegir</span><RelatedGuides slugs={product.relatedGuides} title="Aprendé más sobre tu Snaefell"/></div></section>
+    <section className="section"><div className="container spec-layout"><div><h2>Especificaciones técnicas</h2></div><dl>{product.specifications.map((spec)=><div key={spec.label}><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}</dl></div></section>
+    <section className="section product-learning"><div className="container"><RelatedGuides slugs={product.relatedGuides} title="Aprendé más sobre tu Snaefell"/></div></section>
     {detail && <section className="section product-faq"><div className="container"><FAQSection title={`Preguntas frecuentes sobre ${product.name}`} intro="Información disponible para ayudarte a decidir." items={detail.faqs}/></div></section>}
-    <section className="section product-bottom-cta"><div className="container"><div><span className="eyebrow">Asesoramiento</span><h2>¿Querés conocer disponibilidad de la {product.name}?</h2></div><WhatsAppCTA location="product_bottom" {...whatsappProps} /></div></section>
-    <section className="section related-section"><div className="container"><div className="related-heading"><h2>Otros modelos Snaefell</h2><Link to="/modelos">Comparar toda la gama →</Link></div><ProductGrid products={related}/></div></section>
+    <section className="section product-bottom-cta"><div className="container"><div><h2>¿Querés conocer disponibilidad de la {product.name}?</h2></div><WhatsAppCTA location="product_bottom" {...whatsappProps} /></div></section>
+    <section className="section related-section"><div className="container"><div className="related-heading"><h2>Otros modelos Snaefell</h2><Link to="/modelos">Comparar toda la gama <ArrowRight aria-hidden="true" /></Link></div><ProductGrid products={related}/></div></section>
     <div className="product-sticky-cta"><WhatsAppCTA location="product_mobile_sticky" label={`Consultar ${product.name}`} {...whatsappProps} /></div>
   </div>;
 }

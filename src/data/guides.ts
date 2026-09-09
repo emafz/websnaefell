@@ -1,10 +1,11 @@
-import autonomyImage from "../assets/home/paisaje.png";
-import cityImage from "../assets/home/range-urban.jpeg";
-import fatImage from "../assets/home/range-offroad.jpeg";
-import scootersImage from "../assets/home/range-scooters.jpeg";
 import batteryImage from "../assets/products/editorial/p6-battery.webp";
+import f1RideImage from "../assets/products/editorial/f1-ride.webp";
+import f2UtilityImage from "../assets/products/editorial/f2-utility.webp";
 import foldingImage from "../assets/products/editorial/p2-fold.webp";
+import p2MotorImage from "../assets/products/editorial/p2-motor.webp";
+import p5RideImage from "../assets/products/editorial/p5-ride.webp";
 import pedalImage from "../assets/products/editorial/p6-ride.webp";
+import p6DetailImage from "../assets/products/editorial/p6-detail.webp";
 import type { Guide } from "../types/Guide";
 
 const published = { date:"2026-08-25", updatedAt:"2026-08-25", status:"published" as const };
@@ -14,7 +15,7 @@ export const guides: Guide[] = [
     ...published, id:"choose-ebike", slug:"como-elegir-bicicleta-electrica", category:"Guías de compra",
     title:"¿Cómo elegir una bicicleta eléctrica?", metaTitle:"¿Cómo elegir una bicicleta eléctrica? | Snaefell",
     metaDescription:"Conocé qué revisar al elegir una bicicleta eléctrica: uso, autonomía, potencia, rodado, peso, plegabilidad y respaldo.",
-    excerpt:"Una guía directa para ordenar prioridades y comparar modelos según tu forma real de moverte.", image:cityImage, imageAlt:"Bicicleta eléctrica Snaefell en un entorno urbano",
+    excerpt:"Una guía directa para ordenar prioridades y comparar modelos según tu forma real de moverte.", image:f2UtilityImage, imageAlt:"Bestride Pro F2 de Snaefell en un entorno urbano",
     keyPoints:["Definí primero el uso cotidiano.", "Compará autonomía bajo condiciones equivalentes.", "Considerá tamaño, peso y guardado.", "Revisá soporte y repuestos."],
     sections:[
       { heading:"Empezá por tu recorrido", paragraphs:["La mejor bicicleta eléctrica no es necesariamente la de mayor potencia o autonomía: es la que encaja con tus trayectos, el espacio disponible y la frecuencia de uso. Pensá cuántos kilómetros recorrés, qué pendientes aparecen y dónde vas a guardarla.", "También importa si combinás la bicicleta con transporte público, si subís escaleras o si necesitás llevar objetos. Ese contexto permite descartar opciones que pueden ser atractivas en una ficha técnica pero poco prácticas para tu rutina."] },
@@ -29,7 +30,7 @@ export const guides: Guide[] = [
     ...published, id:"range", slug:"autonomia-bicicleta-electrica", category:"Batería y autonomía",
     title:"¿De qué depende la autonomía de una bicicleta eléctrica?", metaTitle:"Autonomía de una bicicleta eléctrica | Snaefell",
     metaDescription:"Entendé qué factores modifican la autonomía de una e-bike y cómo interpretar el valor publicado para tu recorrido.",
-    excerpt:"El alcance real depende de más que la batería. Conocé las variables que intervienen antes de comparar.", image:autonomyImage, imageAlt:"Bicicleta eléctrica Snaefell durante un recorrido de montaña",
+    excerpt:"El alcance real depende de más que la batería. Conocé las variables que intervienen antes de comparar.", image:p5RideImage, imageAlt:"Antelope P5 de Snaefell durante un recorrido prolongado",
     keyPoints:["Es un valor de referencia, no una distancia fija.", "La asistencia elevada aumenta el consumo.", "Terreno, carga y clima influyen.", "La presión correcta ayuda a rodar eficientemente."],
     sections:[
       { heading:"Qué significa autonomía", paragraphs:["La autonomía es la distancia que el vehículo puede recorrer con una carga bajo determinadas condiciones. Sirve para comparar y planificar, pero no funciona como una promesa idéntica para todos los usuarios.", "Dos recorridos de la misma distancia pueden requerir cantidades de energía diferentes. Una subida prolongada, el viento contrario o una carga mayor demandan más al sistema que un trayecto plano y fluido."] },
@@ -44,7 +45,7 @@ export const guides: Guide[] = [
     ...published, id:"power", slug:"potencia-bicicleta-electrica", category:"Cómo funciona",
     title:"¿Qué significa la potencia en una bicicleta eléctrica?", metaTitle:"Potencia en bicicletas eléctricas | Snaefell",
     metaDescription:"Qué expresan los watts de una bicicleta eléctrica y qué otros factores revisar para elegir un modelo.",
-    excerpt:"Los watts son importantes, pero no cuentan toda la historia. Aprendé a leer la potencia dentro del conjunto.", image:scootersImage, imageAlt:"Modelos eléctricos Snaefell exhibidos en un entorno urbano",
+    excerpt:"Los watts son importantes, pero no cuentan toda la historia. Aprendé a leer la potencia dentro del conjunto.", image:p2MotorImage, imageAlt:"Motor de una bicicleta eléctrica Snaefell",
     keyPoints:["La potencia se expresa en watts.", "No determina sola velocidad o autonomía.", "Peso y terreno cambian la demanda.", "Debe evaluarse con el sistema completo."],
     sections:[
       { heading:"Qué indican los watts", paragraphs:["La potencia nominal del motor, expresada en watts, describe su capacidad de entregar energía mecánica. Es una referencia útil para comparar, especialmente cuando el recorrido incluye carga o pendientes.", "Sin embargo, dos vehículos con la misma potencia pueden sentirse distintos por su peso, transmisión, control electrónico, diámetro de rueda y niveles de asistencia."] },
@@ -87,7 +88,7 @@ export const guides: Guide[] = [
     ...published, id:"types", slug:"urbana-plegable-fat-bike-cual-elegir", category:"Comparativas",
     title:"Bicicleta eléctrica urbana, plegable o Fat Bike: ¿cuál elegir?", metaTitle:"E-bike urbana, plegable o Fat Bike | Snaefell",
     metaDescription:"Compará bicicletas eléctricas urbanas, plegables y Fat Bike según espacio, recorrido y superficie.",
-    excerpt:"Tres enfoques diferentes para necesidades distintas: ciudad, guardado compacto o superficies irregulares.", image:cityImage, imageAlt:"Bicicleta eléctrica Snaefell preparada para movilidad urbana",
+    excerpt:"Tres enfoques diferentes para necesidades distintas: ciudad, guardado compacto o superficies irregulares.", image:f1RideImage, imageAlt:"Bestride F1 de Snaefell durante un recorrido urbano",
     keyPoints:["Urbana: practicidad cotidiana.", "Plegable: guardado y transporte.", "Fat Bike: neumáticos anchos y estabilidad.", "Elegí según tu recorrido real."],
     sections:[
       { heading:"Urbana", paragraphs:["Una bicicleta urbana prioriza una posición y equipamiento adecuados para recorridos cotidianos. Puede ser la opción más directa si circulás principalmente por calles y contás con un lugar cómodo para guardarla."] },
@@ -102,7 +103,7 @@ export const guides: Guide[] = [
     ...published, id:"fat-bike", slug:"que-es-bicicleta-electrica-fat-bike", category:"Guías de compra",
     title:"¿Qué es una bicicleta eléctrica Fat Bike?", metaTitle:"¿Qué es una bicicleta eléctrica Fat Bike? | Snaefell",
     metaDescription:"Qué caracteriza a una Fat Bike eléctrica, cómo influyen sus neumáticos anchos y cuándo puede convenirte.",
-    excerpt:"Neumáticos anchos, apoyo y robustez: conocé sus ventajas y los aspectos prácticos a considerar.", image:fatImage, imageAlt:"Bicicleta eléctrica Fat Bike Snaefell en un camino irregular",
+    excerpt:"Neumáticos anchos, apoyo y robustez: conocé sus ventajas y los aspectos prácticos a considerar.", image:p6DetailImage, imageAlt:"Detalle de la bicicleta eléctrica Fat Bike Mantis P6 de Snaefell",
     keyPoints:["Se distingue por neumáticos anchos.", "Ofrece mayor superficie de apoyo.", "Puede favorecer estabilidad y comodidad.", "Su volumen y peso requieren consideración."],
     sections:[
       { heading:"Qué define a una Fat Bike", paragraphs:["Una Fat Bike utiliza neumáticos considerablemente más anchos que una bicicleta urbana convencional. Esa mayor huella cambia la sensación de manejo y la relación con superficies irregulares.", "En los modelos eléctricos, el motor acompaña el desplazamiento de un conjunto que normalmente tiene mayor volumen y peso."] },

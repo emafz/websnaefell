@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { trackEvent } from "../../utils/analytics";
+import "./ShareButton.css";
 
 export default function ShareButton({ title, text, url, contentType = "product" }: { title: string; text: string; url: string; contentType?: "product" | "guide" }) {
   const [copied, setCopied] = useState(false);

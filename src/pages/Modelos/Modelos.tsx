@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { products } from "../../data/products";
-import type { Product } from "../../types/Product";
-import bestrideF1 from "../../assets/models/bestride-f1.png";
-import bestrideProF2 from "../../assets/models/bestride-pro-f2.png";
-import mantisP6 from "../../assets/models/mantis-p6.png";
-import lightP2 from "../../assets/models/light-p2.png";
-import antelopeP5 from "../../assets/models/antelope-p5.png";
+import type { Product, ProductCategory } from "../../types/Product";
+import bestrideF1 from "../../assets/models/bestride-f1.webp";
+import bestrideProF2 from "../../assets/models/bestride-pro-f2.webp";
+import mantisP6 from "../../assets/models/mantis-p6.webp";
+import lightP2 from "../../assets/models/light-p2.webp";
+import antelopeP5 from "../../assets/models/antelope-p5.webp";
 import ModelComparison from "../../components/ModelComparison/ModelComparison";
-import TrustBenefits from "../../components/TrustBenefits/TrustBenefits";
 import SEO from "../../components/SEO/SEO";
+import Icon, { type IconName } from "../../components/Icon/Icon";
 import { absoluteUrl } from "../../utils/site";
 import { trackEvent } from "../../utils/analytics";
-import ModelFinder from "../../components/ModelFinder/ModelFinder";
-import BatteryEducation from "../../components/BatteryEducation/BatteryEducation";
 import FAQSection from "../../components/FAQSection/FAQSection";
 import { generalPurchaseFaq } from "../../data/faqs";
 import "./Modelos.css";
@@ -25,15 +24,15 @@ const modelImages: Record<string, string> = {
   "antelope-p5": antelopeP5,
 };
 
-function FeatureIcon({ index }: { index: number }) {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 32 32" fill="none">
-      {index === 0 && <><path d="M18 2 7 17h8l-1 13 11-16h-8l1-12Z" /><circle cx="16" cy="16" r="14" /></>}
-      {index === 1 && <><path d="M5 23a12 12 0 1 1 22 0" /><path d="m16 18 7-7M7 23h18" /><circle cx="16" cy="18" r="2" /></>}
-      {index === 2 && <><path d="M5 9h20v15H5zM25 13h3v7h-3" /><path d="m10 18 4-5v4h7l-4 5v-4h-7Z" /></>}
-      {index === 3 && <><path d="M6 24V10h20v14H6ZM10 7h12M11 14h10M11 19h7" /></>}
-    </svg>
-  );
+function featureIcon(label: string): IconName {
+  const text = label.toLowerCase();
+  if (/\bpeso\b|carga|capacidad/.test(text)) return "weight";
+  if (/neum[aá]tic|cubierta|medida|dimensi|tamaño|rodado/.test(text)) return "tire";
+  if (/motor|potencia|watt/.test(text)) return "bolt";
+  if (/velocid|km\/h/.test(text)) return "speed";
+  if (/autonom/.test(text)) return "route";
+  if (/bater|volta/.test(text)) return "battery";
+  return "gauge";
 }
 
 function productUrl(product: Product) {
@@ -41,16 +40,20 @@ function productUrl(product: Product) {
 }
 
 export default function Modelos() {
+  const firstIndexByCategory = new Map<ProductCategory, number>();
+  products.forEach((product, index) => {
+    if (!firstIndexByCategory.has(product.category)) firstIndexByCategory.set(product.category, index);
+  });
   return (
-    <main className="models-page">
+    <div className="models-page">
       <SEO title="Modelos Snaefell | Bicicletas y Monopatines Eléctricos" description="Compará bicicletas y monopatines eléctricos Snaefell por potencia, autonomía y uso. Conocé cada modelo y consultá por WhatsApp." path="/modelos" structuredData={{ "@context":"https://schema.org", "@type":"ItemList", name:"Modelos Snaefell", itemListElement:products.map((product,index) => ({ "@type":"ListItem", position:index+1, name:product.name, url:absoluteUrl(`/modelos/${product.slug}`) })) }} />
       <header className="models-hero">
         <div className="container models-hero__content">
           <span className="eyebrow">Gama Snaefell</span>
           <h1>Encontrá tu<br />próximo movimiento.</h1>
           <p>
-            Compará nuestra línea de movilidad eléctrica y elegí el modelo que mejor
-            acompaña tu ritmo, tu recorrido y tu forma de moverte.
+            Compará la gama Snaefell y elegí el modelo que mejor se adapta
+            a tu recorrido y a tu forma de moverte.
           </p>
         </div>
       </header>
@@ -58,9 +61,10 @@ export default function Modelos() {
       <section className="models-catalog" id="modelos">
         <div className="container">
           <div className="models-list">
-            {products.map((product) => {
+{products.map((product, index) => {
+              const categoryAnchor = firstIndexByCategory.get(product.category) === index ? product.category : undefined;
               return (
-                <article className="model-showcase" id={product.category} key={product.id}>
+                <article className="model-showcase" id={categoryAnchor} key={product.id}>
                   <Link className="model-showcase__visual" to={productUrl(product)} onClick={() => trackEvent("select_model", { product_name:product.name, product_model:product.model, cta_location:"model_card" })}>
                     <img src={modelImages[product.id] ?? product.variants[0].images[0]} alt={product.name} />
                   </Link>
@@ -73,9 +77,9 @@ export default function Modelos() {
                     </div>
                     <p className="model-showcase__description">{product.shortDescription}</p>
                     <dl className="model-specs">
-                      {product.features.slice(0, 4).map((feature, featureIndex) => (
+                      {product.features.slice(0, 4).map((feature) => (
                         <div key={feature.label}>
-                          <FeatureIcon index={featureIndex} />
+                          <Icon name={featureIcon(feature.label)} />
                           <dt>{feature.label}</dt>
                           <dd>{feature.value}</dd>
                         </div>
@@ -88,7 +92,7 @@ export default function Modelos() {
                         ))}
                         <span>{product.variants.length} {product.variants.length === 1 ? "color" : "colores"}</span>
                       </div>
-                      <Link className="button button--primary" to={productUrl(product)} onClick={() => trackEvent("select_model", { product_name:product.name, product_model:product.model, cta_location:"model_card" })}>Ver modelo <span>→</span></Link>
+                      <Link className="button button--primary" to={productUrl(product)} onClick={() => trackEvent("select_model", { product_name:product.name, product_model:product.model, cta_location:"model_card" })}>Ver modelo <ArrowRight aria-hidden="true" /></Link>
                     </div>
                   </div>
                 </article>
@@ -96,19 +100,14 @@ export default function Modelos() {
             })}
           </div>
           <ModelComparison />
-          <div className="models-trust"><TrustBenefits /></div>
         </div>
       </section>
-
-      <ModelFinder />
-      <BatteryEducation compact />
 
       <section className="section"><div className="container"><FAQSection title="Antes de elegir tu Snaefell" intro="Respuestas generales para comparar con más claridad. Para condiciones comerciales vigentes, consultá con nuestro equipo." items={generalPurchaseFaq}/></div></section>
 
       <section className="models-guide section">
         <div className="container models-guide__layout">
           <div>
-            <span className="eyebrow">Guía rápida</span>
             <h2>¿Qué modelo es para vos?</h2>
           </div>
           <div className="models-guide__options">
@@ -118,6 +117,6 @@ export default function Modelos() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

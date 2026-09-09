@@ -35,6 +35,6 @@ export default function GuideDetail() {
     <section className="section guide-faq"><div className="container"><FAQSection items={guide.faq}/></div></section>
     {relatedProducts.length>0&&<section className="section guide-products"><div className="container"><h2>Modelos relacionados</h2><p>Productos vinculados con el uso y los temas explicados en esta guía.</p><div onClick={()=>trackEvent("guide_to_product",{guide_title:guide.title})}><ProductGrid products={relatedProducts}/></div></div></section>}
     <section className="section"><div className="container"><RelatedGuides slugs={guide.relatedGuides} currentSlug={guide.slug}/></div></section>
-    <section className="section guide-cta"><div className="container"><div><span className="eyebrow">Asesoramiento</span><h2>¿Todavía no sabés qué modelo elegir?</h2><p>Nuestro equipo puede ayudarte a encontrar el Snaefell adecuado para tu forma de moverte.</p></div><WhatsAppCTA location="article_bottom" label="Consultar por WhatsApp" message={whatsappMessage}/></div></section>
+    <section className="section guide-cta"><div className="container"><div><h2>¿Todavía no sabés qué modelo elegir?</h2><p>Nuestro equipo puede ayudarte a encontrar el Snaefell adecuado para tu forma de moverte.</p></div><WhatsAppCTA location="article_bottom" message={whatsappMessage}/></div></section>
   </article>;
 }

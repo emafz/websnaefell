@@ -26,14 +26,14 @@
   flex: none;
   display: grid;
   place-items: center;
-  color: #a45cff;
+  color: var(--color-accent-soft);
 }
 
 .trust-benefits__icon svg { width: 100%; height: 100%; }
 
 .trust-benefits h3 {
   margin: 0 0 7px;
-  color: #d49bff;
+  color: var(--color-accent-faint);
   font-size: .78rem;
   font-weight: 600;
   letter-spacing: .03em;

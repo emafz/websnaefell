@@ -7,9 +7,3 @@ export const generalPurchaseFaq: GuideFaq[] = [
   { question:"¿Qué mantenimiento necesita?", answer:"Además de seguir el manual, conviene controlar frenos, neumáticos, ajustes y sistema eléctrico mediante atención técnica adecuada." },
   { question:"¿Cómo consulto garantía, entrega o disponibilidad?", answer:"Esas condiciones pueden cambiar. Nuestro equipo puede brindarte la información vigente del modelo por WhatsApp." },
 ];
-
-export const batteryFaq: GuideFaq[] = [
-  { question:"¿Puedo usar cualquier cargador?", answer:"No. Utilizá únicamente el cargador indicado para la batería y el modelo." },
-  { question:"¿Cuánto tarda en cargar?", answer:"El tiempo depende del modelo. Consultá la ficha técnica y confirmá la información vigente antes de elegir." },
-  { question:"¿La batería es removible?", answer:"Depende del producto. Revisá la información específica del modelo o consultá con nuestro equipo." },
-];

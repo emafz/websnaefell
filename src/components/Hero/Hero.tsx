@@ -1,31 +1,41 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Icon, { type IconName } from "../Icon/Icon";
 import WhatsAppCTA from "../WhatsAppCTA/WhatsAppCTA";
-import heroF1 from "../../assets/hero/Hero-F1.png";
-import heroF2 from "../../assets/hero/Hero-F2.png";
-import heroP2 from "../../assets/hero/Hero-P2.png";
-import heroP6 from "../../assets/hero/Hero-P6.png";
-import heroP5 from "../../assets/hero/Hero-P5.png";
 import "./Hero.css";
 
+const heroAssetBase = `${import.meta.env.BASE_URL}assets/hero/`;
+
 const slides = [
-  { src: heroF1, alt: "Conductor junto a un monopatín eléctrico Snaefell Bestride F1", model: "BESTRIDE F1", title: "Movimiento sin límites", description: "Diseño, potencia y libertad para transformar cada trayecto en una experiencia propia.", features: [["500 W", "POTENCIA"], ["40 KM", "AUTONOMÍA"], ["40 KM/H", "VELOCIDAD MÁX."], ["120 KG", "CARGA MÁX."]] },
-  { src: heroF2, alt: "Conductora en un monopatín eléctrico de tres ruedas Snaefell Bestride Pro F2", model: "BESTRIDE PRO F2", title: "Potencia para tu día a día", description: "Desde la ciudad hasta nuevos caminos, Snaefell acompaña cada trayecto con libertad y confianza.", features: [["1000 W", "POTENCIA"], ["45 KM", "AUTONOMÍA"], ["55 KM/H", "VELOCIDAD MÁX."], ["150 KG", "CARGA MÁX."]] },
-  { src: heroP2, alt: "Ciclista urbano en una bicicleta eléctrica Snaefell Light P2", model: "LIGHT P2", title: "Elegí cómo moverte", description: "Vehículos eléctricos diseñados para acompañarte con estilo, rendimiento y libertad en cada recorrido.", features: [["250 W", "POTENCIA"], ["35 KM", "AUTONOMÍA"], ["16 × 1,95", "NEUMÁTICOS"], ["21 KG", "PESO"]] },
-  { src: heroP5, alt: "Bicicleta eléctrica Snaefell Antelope P5 sobre un paisaje rocoso", model: "ANTELOPE P5", title: "Libertad para descubrir más", description: "Cada modelo Snaefell está pensado para ofrecer autonomía, diseño y una experiencia de movimiento superior.", features: [["750 W", "POTENCIA"], ["65 KM", "AUTONOMÍA MÁX."], ["24 × 4,0", "NEUMÁTICOS FAT"], ["120 KG", "CARGA MÁX."]] },
-  { src: heroP6, alt: "Bicicleta eléctrica Snaefell Mantis P6 en la montaña", model: "MANTIS P6", title: "Tecnología que te impulsa", description: "Soluciones de movilidad eléctrica creadas para llevarte más lejos, con diseño y confianza en cada detalle.", features: [["750 W", "POTENCIA"], ["115 KM", "AUTONOMÍA MÁX."], ["20 × 4,0", "NEUMÁTICOS FAT"], ["120 KG", "CARGA MÁX."]] },
-];
+  { base: "hero-f1", alt: "Conductor junto a un monopatín eléctrico Snaefell Bestride F1", model: "BESTRIDE F1", title: "La ciudad, a tu escala.", description: "Plegable y compacta, con potencia para moverte de forma práctica donde transites a diario.", features: [["500 W", "POTENCIA"], ["40 KM", "AUTONOMÍA"], ["40 KM/H", "VELOCIDAD MÁX."], ["120 KG", "CARGA MÁX."]] },
+  { base: "hero-f2", alt: "Conductora en un monopatín eléctrico de tres ruedas Snaefell Bestride Pro F2", model: "BESTRIDE PRO F2", title: "Tres ruedas. Cero dudas.", description: "Doble motor y tres ruedas para un control estable, de la salida a la llegada.", features: [["1000 W", "POTENCIA"], ["45 KM", "AUTONOMÍA"], ["55 KM/H", "VELOCIDAD MÁX."], ["150 KG", "CARGA MÁX."]] },
+  { base: "hero-p2", alt: "Ciclista urbano en una bicicleta eléctrica Snaefell Light P2", model: "LIGHT P2", title: "Tu bici, siempre con vos.", description: "Se pliega, se levanta y se guarda. Ligera y ágil para acompañar tu día entero.", features: [["250 W", "POTENCIA"], ["35 KM", "AUTONOMÍA"], ["16 × 1,95", "NEUMÁTICOS"], ["21 KG", "PESO"]] },
+  { base: "hero-p5", alt: "Bicicleta eléctrica Snaefell Antelope P5 sobre un paisaje rocoso", model: "ANTELOPE P5", title: "Salí del camino.", description: "Neumáticos Fat de gran apoyo para rodar estable, en la ciudad o fuera de ella.", features: [["750 W", "POTENCIA"], ["65 KM", "AUTONOMÍA MÁX."], ["24 × 4,0", "NEUMÁTICOS FAT"], ["120 KG", "CARGA MÁX."]] },
+  { base: "hero-p6", alt: "Bicicleta eléctrica Snaefell Mantis P6 en la montaña", model: "MANTIS P6", title: "Hasta 115 km, sin escalas.", description: "La mayor autonomía de la gama para recorridos largos, pendientes y caminos exigentes.", features: [["750 W", "POTENCIA"], ["115 KM", "AUTONOMÍA MÁX."], ["20 × 4,0", "NEUMÁTICOS FAT"], ["120 KG", "CARGA MÁX."]] },
+].map((slide) => ({
+  ...slide,
+  src: `${heroAssetBase}${slide.base}-1280.jpg`,
+  srcset: `${heroAssetBase}${slide.base}-1280.jpg 1280w, ${heroAssetBase}${slide.base}-1920.jpg 1920w`,
+}));
+
+function featureIcon(label: string, index: number): IconName {
+  if (/neum[aá]tic|cubierta|medida|dimensi|tamaño|rodado/i.test(label)) return "tire";
+  return (["bolt", "battery", "speed", "weight"] as IconName[])[index];
+}
 
 export default function Hero() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
+    if (paused) return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
     const timer = window.setInterval(() => {
       setActiveSlide((current) => (current + 1) % slides.length);
     }, 8000);
 
     return () => window.clearInterval(timer);
-  }, []);
+  }, [paused]);
 
   const showPrevious = () => {
     setActiveSlide((current) => (current - 1 + slides.length) % slides.length);
@@ -36,16 +46,19 @@ export default function Hero() {
   };
 
   return (
-    <section className="hero" aria-roledescription="carousel" aria-label="Modelos destacados">
+    <section className="hero" aria-roledescription="carousel" aria-label="Modelos destacados" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocus={() => setPaused(true)} onBlur={() => setPaused(false)}>
       <div className="hero-slides" aria-live="off">
         {slides.map((slide, index) => (
           <img
             className={`hero-slide${index === activeSlide ? " is-active" : ""}`}
             src={slide.src}
+            srcSet={slide.srcset}
+            sizes="100vw"
             alt={index === activeSlide ? slide.alt : ""}
             aria-hidden={index !== activeSlide}
             loading={index === 0 ? "eager" : "lazy"}
             fetchPriority={index === 0 ? "high" : "auto"}
+            decoding="async"
             key={slide.src}
           />
         ))}
@@ -55,8 +68,9 @@ export default function Hero() {
 
       <div className="container hero-content">
         <div className="hero-copy" key={slides[activeSlide].model}>
+          <h1 className="hero-brand-line">Snaefell. Movete distinto.</h1>
           <span className="hero-kicker"><i />{slides[activeSlide].model}</span>
-          <h1>{slides[activeSlide].title}</h1>
+          <h2 className="hero-title">{slides[activeSlide].title}</h2>
           <p>{slides[activeSlide].description}</p>
           <div className="hero-actions">
             <WhatsAppCTA location="hero" label="Recibir asesoramiento" message="Hola, quiero recibir asesoramiento para elegir un modelo Snaefell." />
@@ -67,12 +81,7 @@ export default function Hero() {
         <div className="hero-dashboard">
           {slides[activeSlide].features.map(([value, label], index) => (
             <div className="hero-stat" key={label}>
-              <svg aria-hidden="true" viewBox="0 0 32 32" fill="none">
-                {index === 0 && <><path d="M17.8 2 7 17h8l-1 13 11-16h-8l.8-12Z"/><circle cx="16" cy="16" r="14"/></>}
-                {index === 1 && <><path d="M5 9h19v15H5zM24 13h3v7h-3M9 13h7l-3 4h6"/></>}
-                {index === 2 && <><circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="6"/><path d="M16 2v4M16 26v4M2 16h4M26 16h4"/></>}
-                {index === 3 && <><path d="M4 25 25 7M5 25h23M25 7v12M22 10h3v3"/></>}
-              </svg>
+              <Icon name={featureIcon(label, index)} />
               <div><strong>{value}</strong><span>{label}</span></div>
             </div>
           ))}
