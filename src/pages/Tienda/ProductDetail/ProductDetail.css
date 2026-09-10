@@ -48,6 +48,7 @@
 .related-section { background:rgba(0,0,15,.34); }
 .related-heading { display:flex; justify-content:space-between; align-items:end; margin-bottom:30px; }
 .related-heading h2 { font-size:2.2rem; margin:0; }
+.related-heading a svg { display:none; }
 .product-bottom-cta { background:linear-gradient(110deg,rgba(8,40,91,.9),rgba(53,13,115,.9)); }
 .product-bottom-cta > .container { display:flex; align-items:center; justify-content:space-between; gap:30px; }
 .product-bottom-cta h2 { max-width:780px; margin:18px 0 0; font-size:clamp(1.8rem,3vw,2.8rem); }

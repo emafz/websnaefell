@@ -11,7 +11,7 @@
 .range-card h3 { max-width:330px; margin:0; color:#fff; font-size:1.05rem; line-height:1.4; letter-spacing:.02em; text-transform:uppercase; }
 .range-card p { margin:16px 0 0; color:#e0e2e8; font-size:1rem; line-height:1.55; }
 .range-card a { margin-top:auto; color:var(--color-accent-soft); font-size:.8rem; font-weight:700; letter-spacing:.01em; }
-.range-card a span, .home-news__heading a span { margin-left:10px; color:var(--color-accent-soft); font-size:1rem; }
+.range-card a span, .home-news__heading a span { display:none; }
 
 .home-brand { min-height:650px; display:flex; align-items:center; overflow:hidden; isolation:isolate; }
 .home-brand::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,rgba(2,5,20,.94) 0%,rgba(2,5,20,.78) 42%,rgba(2,5,20,.2) 72%,rgba(2,5,20,.08) 100%); }

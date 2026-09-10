@@ -10,6 +10,35 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
   letter-spacing: -0.01em;
 }
+/* Escala tipográfica unificada fuera de los banners hero. */
+.app-main .battery-education h2,
+.app-main .mobility-benefits h2,
+.app-main .faq-section h2,
+.app-main .guide-body h2,
+.app-main .guide-products h2,
+.app-main .guide-cta h2,
+.app-main .related-guides h2,
+.app-main .model-finder h2,
+.app-main .home-section h2,
+.app-main .advisor-banner h2,
+.app-main .models-section-heading h2,
+.app-main .models-guide h2,
+.app-main .about-values h2,
+.app-main .product-trust h2,
+.app-main .product-performance h2,
+.app-main .product-editorial__intro h2,
+.app-main .spec-layout h2,
+.app-main .recommended-for h2,
+.app-main .product-learning h2,
+.app-main .product-faq h2,
+.app-main .product-bottom-cta h2,
+.app-main .related-heading h2,
+.app-main .news-cta h2,
+.app-main .not-found h1,
+.app-main .model-showcase__title h3,
+.app-main .product-story__copy h3 {
+  font-size: 32px !important;
+}
 .app-shell { min-height: 100vh; display: flex; flex-direction: column; }
 .app-main {
   flex: 1;

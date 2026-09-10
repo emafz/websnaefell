@@ -10,5 +10,5 @@
 .model-finder__results strong { margin:16px 0 7px; font-size:1.5rem; }
 .model-finder__results small { color:#c8ced9; }
 .model-finder__results b { margin-top:auto; padding-top:20px; color:var(--color-accent-soft); font-size:.8rem; }
-.model-finder__results b svg { width:15px; height:15px; vertical-align:-2px; }
+.model-finder__results b svg { display:none; }
 @media(max-width:750px){.model-finder__results{grid-template-columns:1fr}.model-finder__results a{min-height:150px}}

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import type { Product } from "../../types/Product";
 import { trackEvent } from "../../utils/analytics";
 import "./ProductCard.css";
@@ -27,10 +26,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <small>{product.variants.length} {product.variants.length === 1 ? "color" : "colores"}</small>
         </div>
         <div className="product-card__footer">
-          <strong>Conocé el modelo</strong>
-          <Link className="product-card__arrow" to={productUrl} aria-label={`Conocé ${product.name}`}>
-            <ArrowRight aria-hidden="true" />
-          </Link>
+          <Link className="product-card__link" to={productUrl}>Conocé el modelo</Link>
         </div>
       </div>
     </article>

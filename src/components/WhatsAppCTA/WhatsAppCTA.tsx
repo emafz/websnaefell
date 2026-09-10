@@ -1,5 +1,4 @@
 import type { MouseEventHandler } from "react";
-import { ArrowRight } from "lucide-react";
 import { trackWhatsAppContact } from "../../utils/analytics";
 import { generateWhatsAppUrl, type WhatsAppContext } from "../../utils/whatsapp";
 import "./WhatsAppCTA.css";
@@ -22,7 +21,6 @@ export default function WhatsAppCTA({ label = "Recibir asesoramiento", location,
   return (
     <a className={`whatsapp-cta ${className}`.trim()} href={generateWhatsAppUrl(context)} target="_blank" rel="noopener noreferrer" onClick={handleClick}>
       <span>{label}</span>
-      <ArrowRight aria-hidden="true" />
     </a>
   );
 }

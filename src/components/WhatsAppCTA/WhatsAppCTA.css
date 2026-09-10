@@ -26,7 +26,6 @@
 
 .whatsapp-cta:focus-visible { outline: 3px solid #8fb5ff; outline-offset: 3px; }
 .whatsapp-cta span { display:block; }
-.whatsapp-cta svg { width:18px; height:18px; flex:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; }
 
 @media (max-width: 560px) {
   .whatsapp-cta { min-height:44px; padding-inline:18px; font-size:.74rem; }
