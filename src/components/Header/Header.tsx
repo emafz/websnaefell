@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { ChevronDown, Menu } from "lucide-react";
+import { ArrowRight, ChevronDown, Menu } from "lucide-react";
 import logo from "../../assets/global/snaefell-logo.webp";
 import { navigation } from "../../data/navigation";
 import { products } from "../../data/products";
@@ -44,11 +44,15 @@ export default function Header() {
               </NavLink>
               <div className="nav-dropdown__menu" aria-label="Modelos Snaefell">
                 {products.map((product) => (
-                  <Link key={product.id} to={`/modelos/${product.slug}`} onClick={() => setOpen(false)}>
+                  <Link className="nav-dropdown__model" key={product.id} to={`/modelos/${product.slug}`} onClick={() => setOpen(false)}>
                     <img src={product.variants[0].images[0]} alt={product.name} />
                     <span>{product.name}</span>
                   </Link>
                 ))}
+                <Link className="nav-dropdown__all-models" to="/modelos" onClick={() => setOpen(false)}>
+                  <span>Todos los modelos</span>
+                  <ArrowRight aria-hidden="true" />
+                </Link>
               </div>
             </div>
           ) : (
