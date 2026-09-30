@@ -8,9 +8,9 @@ export default function Footer() {
     <footer className="site-footer" id="contacto">
       <div className="container footer-grid">
         <div className="footer-brand"><img src={logo} alt="Snaefell" /><p>Movilidad eléctrica para elegir tu propio camino.</p></div>
-        <div><h4>Navegación</h4><Link to="/modelos">Modelos</Link><Link to="/nosotros">Nosotros</Link><Link to="/novedades">Guías</Link></div>
+        <div><h4>Navegación</h4><Link to="/modelos">Modelos</Link><Link to="/nosotros">Nosotros</Link><Link to="/novedades">Guías</Link><Link to="/contacto">Contacto</Link></div>
         <div><h4>Modelos</h4><Link to="/modelos#monopatin">Monopatines eléctricos</Link><Link to="/modelos#bicicleta">Bicicletas eléctricas</Link><Link to="/modelos#comparador">Comparar modelos</Link></div>
-        <div><h4>Contacto</h4><a href={generateWhatsAppUrl()} target="_blank" rel="noopener noreferrer">Recibir asesoramiento</a><a href={generateWhatsAppUrl({ message:"Hola, quiero información para ser distribuidor oficial de Snaefell." })} target="_blank" rel="noopener noreferrer">Quiero ser distribuidor</a></div>
+        <div><h4>Contacto</h4><a href={generateWhatsAppUrl()} target="_blank" rel="noopener noreferrer">Recibir asesoramiento</a><Link to="/contacto">Quiero ser distribuidor</Link></div>
       </div>
       <div className="container footer-bottom"><span>© {new Date().getFullYear()} Snaefell</span><span>Movilidad eléctrica con diseño y respaldo.</span></div>
     </footer>

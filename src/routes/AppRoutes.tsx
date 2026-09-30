@@ -6,6 +6,7 @@ import Novedades from "../pages/Novedades/Novedades";
 import ProductDetail from "../pages/Tienda/ProductDetail/ProductDetail";
 import NotFound from "../pages/NotFound/NotFound";
 import GuideDetail from "../pages/GuideDetail/GuideDetail";
+import Contacto from "../pages/Contacto/Contacto";
 
 function LegacyProductRedirect() {
   const { productSlug, variantSlug } = useParams();
@@ -21,6 +22,7 @@ export default function AppRoutes() {
       <Route path="/modelos/:productSlug/:variantSlug?" element={<ProductDetail />} />
       <Route path="/novedades" element={<Novedades />} />
       <Route path="/novedades/:guideSlug" element={<GuideDetail />} />
+      <Route path="/contacto" element={<Contacto />} />
       <Route path="/tienda" element={<Navigate replace to="/modelos" />} />
       <Route path="/tienda/categoria/:category" element={<Navigate replace to="/modelos" />} />
       <Route path="/tienda/:productSlug/:variantSlug?" element={<LegacyProductRedirect />} />

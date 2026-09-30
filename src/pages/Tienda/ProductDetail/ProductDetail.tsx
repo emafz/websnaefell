@@ -61,7 +61,6 @@ export default function ProductDetail() {
           <span className="eyebrow">{categoryName}</span>
           <h1>{product.name}</h1><p className="product-tagline">{product.tagline}</p>
           <p className="product-description">{product.shortDescription}</p>
-          <ProductFeatures features={product.features.slice(0, 5)} />
           <div className="product-price"><small>Precio de referencia</small>{formatCurrency(variant.price)}</div>
           <div className="product-option"><div className="product-option__label"><strong>Color</strong><span>{variant.color} · SKU {variant.sku}</span></div><ColorSelector variants={product.variants} selectedId={variant.id} onChange={(next) => navigate(`/modelos/${product.slug}/${next.slug}`)} /></div>
           {variant.available === false && <p className="product-stock">Consultá disponibilidad para el color {variant.color}.</p>}
@@ -85,7 +84,6 @@ export default function ProductDetail() {
     <section className="section"><div className="container spec-layout"><div><h2>Especificaciones técnicas</h2></div><dl>{product.specifications.map((spec)=><div key={spec.label}><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}</dl></div></section>
     <section className="section product-learning"><div className="container"><RelatedGuides slugs={product.relatedGuides} title="Aprendé más sobre tu Snaefell"/></div></section>
     {detail && <section className="section product-faq"><div className="container"><FAQSection title={`Preguntas frecuentes sobre ${product.name}`} intro="Información disponible para ayudarte a decidir." items={detail.faqs}/></div></section>}
-    <section className="section product-bottom-cta"><div className="container"><div><h2>¿Querés conocer disponibilidad de la {product.name}?</h2></div><WhatsAppCTA location="product_bottom" {...whatsappProps} /></div></section>
     <section className="section related-section"><div className="container"><div className="related-heading"><h2>Otros modelos Snaefell</h2><Link to="/modelos">Comparar toda la gama <ArrowRight aria-hidden="true" /></Link></div><ProductGrid products={related}/></div></section>
     <div className="product-sticky-cta"><WhatsAppCTA location="product_mobile_sticky" label={`Consultar ${product.name}`} {...whatsappProps} /></div>
   </div>;

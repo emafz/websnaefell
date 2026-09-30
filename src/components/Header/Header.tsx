@@ -3,14 +3,12 @@ import { Link, NavLink } from "react-router-dom";
 import { ArrowRight, ChevronDown, Menu } from "lucide-react";
 import logo from "../../assets/global/snaefell-logo.webp";
 import { navigation } from "../../data/navigation";
-import { products } from "../../data/products";
-import WhatsAppCTA from "../WhatsAppCTA/WhatsAppCTA";
+import { modelDisplayProducts } from "../../data/modelOrder";
 import "./Header.css";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
-  const distributorMessage = "Hola, quiero información para ser distribuidor oficial de Snaefell.";
 
   useEffect(() => {
     if (!open) return;
@@ -43,7 +41,7 @@ export default function Header() {
                 <ChevronDown className="nav-dropdown__arrow" aria-hidden="true" />
               </NavLink>
               <div className="nav-dropdown__menu" aria-label="Modelos Snaefell">
-                {products.map((product) => (
+                {modelDisplayProducts.map((product) => (
                   <Link className="nav-dropdown__model" key={product.id} to={`/modelos/${product.slug}`} onClick={() => setOpen(false)}>
                     <img src={product.variants[0].images[0]} alt={product.name} />
                     <span>{product.name}</span>
@@ -60,10 +58,9 @@ export default function Header() {
               {item.label}
             </NavLink>
           ))}
-          <a className="nav-link" href={`${import.meta.env.BASE_URL}#contacto`} onClick={() => setOpen(false)}>Contacto</a>
-          <WhatsAppCTA className="mobile-distributor" location="header_mobile_distributor" label="Quiero ser distribuidor" message={distributorMessage} />
+          <Link className="whatsapp-cta mobile-distributor" to="/contacto" onClick={() => setOpen(false)}><span>Quiero ser distribuidor</span></Link>
         </nav>
-        <WhatsAppCTA className="header-distributor" location="header_distributor" label="Quiero ser distribuidor" message={distributorMessage} />
+        <Link className="whatsapp-cta header-distributor" to="/contacto"><span>Quiero ser distribuidor</span></Link>
       </div>
     </header>
   );

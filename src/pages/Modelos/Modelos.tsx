@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { products } from "../../data/products";
+import { modelDisplayProducts } from "../../data/modelOrder";
 import type { Product, ProductCategory } from "../../types/Product";
 import bestrideF1 from "../../assets/models/bestride-f1.webp";
 import bestrideProF2 from "../../assets/models/bestride-pro-f2.webp";
@@ -41,12 +41,12 @@ function productUrl(product: Product) {
 
 export default function Modelos() {
   const firstIndexByCategory = new Map<ProductCategory, number>();
-  products.forEach((product, index) => {
+  modelDisplayProducts.forEach((product, index) => {
     if (!firstIndexByCategory.has(product.category)) firstIndexByCategory.set(product.category, index);
   });
   return (
     <div className="models-page">
-      <SEO title="Modelos Snaefell | Bicicletas y Monopatines Eléctricos" description="Compará bicicletas y monopatines eléctricos Snaefell por potencia, autonomía y uso. Conocé cada modelo y consultá por WhatsApp." path="/modelos" structuredData={{ "@context":"https://schema.org", "@type":"ItemList", name:"Modelos Snaefell", itemListElement:products.map((product,index) => ({ "@type":"ListItem", position:index+1, name:product.name, url:absoluteUrl(`/modelos/${product.slug}`) })) }} />
+      <SEO title="Modelos Snaefell | Bicicletas y Monopatines Eléctricos" description="Compará bicicletas y monopatines eléctricos Snaefell por potencia, autonomía y uso. Conocé cada modelo y consultá por WhatsApp." path="/modelos" structuredData={{ "@context":"https://schema.org", "@type":"ItemList", name:"Modelos Snaefell", itemListElement:modelDisplayProducts.map((product,index) => ({ "@type":"ListItem", position:index+1, name:product.name, url:absoluteUrl(`/modelos/${product.slug}`) })) }} />
       <header className="models-hero">
         <div className="container models-hero__content">
           <span className="eyebrow">Gama Snaefell</span>
@@ -61,7 +61,7 @@ export default function Modelos() {
       <section className="models-catalog" id="modelos">
         <div className="container">
           <div className="models-list">
-{products.map((product, index) => {
+{modelDisplayProducts.map((product, index) => {
               const categoryAnchor = firstIndexByCategory.get(product.category) === index ? product.category : undefined;
               return (
                 <article className="model-showcase" id={categoryAnchor} key={product.id}>
@@ -99,7 +99,7 @@ export default function Modelos() {
               );
             })}
           </div>
-          <ModelComparison />
+          <ModelComparison products={modelDisplayProducts} />
         </div>
       </section>
 
