@@ -30,4 +30,6 @@
   --brand-surface: rgba(255,255,255,.96);
   --brand-line: rgba(255,255,255,.14);
   --transition: 180ms ease;
+  --type-title: 2rem;
+  --type-hero: clamp(2.5rem, 4vw, 3.25rem);
 }

@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import Home from "../pages/Home/Home";
+import HomeAlternativo from "../pages/HomeAlternativo/HomeAlternativo";
 import Nosotros from "../pages/Nosotros/Nosotros";
 import Modelos from "../pages/Modelos/Modelos";
 import Novedades from "../pages/Novedades/Novedades";
@@ -7,6 +8,8 @@ import ProductDetail from "../pages/Tienda/ProductDetail/ProductDetail";
 import NotFound from "../pages/NotFound/NotFound";
 import GuideDetail from "../pages/GuideDetail/GuideDetail";
 import Contacto from "../pages/Contacto/Contacto";
+import Productos from "../pages/Productos/Productos";
+import ProductoDetalle from "../pages/Productos/ProductoDetalle";
 
 function LegacyProductRedirect() {
   const { productSlug, variantSlug } = useParams();
@@ -17,9 +20,12 @@ export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/home-alternativo" element={<HomeAlternativo />} />
       <Route path="/nosotros" element={<Nosotros />} />
       <Route path="/modelos" element={<Modelos />} />
       <Route path="/modelos/:productSlug/:variantSlug?" element={<ProductDetail />} />
+      <Route path="/productos" element={<Productos />} />
+      <Route path="/productos/:productSlug/:variantSlug?" element={<ProductoDetalle />} />
       <Route path="/novedades" element={<Novedades />} />
       <Route path="/novedades/:guideSlug" element={<GuideDetail />} />
       <Route path="/contacto" element={<Contacto />} />

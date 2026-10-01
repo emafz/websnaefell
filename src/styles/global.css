@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 .app-main .not-found h1,
 .app-main .model-showcase__title h3,
 .app-main .product-story__copy h3 {
-  font-size: 32px !important;
+  font-size: var(--type-title) !important;
 }
 .app-shell { min-height: 100vh; display: flex; flex-direction: column; }
 .app-main {

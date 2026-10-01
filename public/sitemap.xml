@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://emafz.github.io/websnaefell/</loc></url>
+  <url><loc>https://emafz.github.io/websnaefell/home-alternativo</loc></url>
   <url><loc>https://emafz.github.io/websnaefell/modelos</loc></url>
   <url><loc>https://emafz.github.io/websnaefell/modelos/bestride-f1</loc></url>
   <url><loc>https://emafz.github.io/websnaefell/modelos/bestride-pro-f2</loc></url>
   <url><loc>https://emafz.github.io/websnaefell/modelos/mantis-p6</loc></url>
   <url><loc>https://emafz.github.io/websnaefell/modelos/light-p2</loc></url>
   <url><loc>https://emafz.github.io/websnaefell/modelos/antelope-p5</loc></url>
+  <url><loc>https://emafz.github.io/websnaefell/productos</loc></url>
+  <url><loc>https://emafz.github.io/websnaefell/productos/bestride-f1</loc></url>
+  <url><loc>https://emafz.github.io/websnaefell/productos/bestride-pro-f2</loc></url>
+  <url><loc>https://emafz.github.io/websnaefell/productos/mantis-p6</loc></url>
+  <url><loc>https://emafz.github.io/websnaefell/productos/light-p2</loc></url>
+  <url><loc>https://emafz.github.io/websnaefell/productos/antelope-p5</loc></url>
   <url><loc>https://emafz.github.io/websnaefell/nosotros</loc></url>
   <url><loc>https://emafz.github.io/websnaefell/novedades</loc></url>
   <url><loc>https://emafz.github.io/websnaefell/novedades/como-elegir-bicicleta-electrica</loc></url>
