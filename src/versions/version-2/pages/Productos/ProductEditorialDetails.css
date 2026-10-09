@@ -1,0 +1,7 @@
+﻿.product-editorial-details__support { background:var(--brand-page-background); color:#fff; }
+.product-editorial-details__support h2 { margin:20px 0 34px; font-size:var(--type-title); line-height:1.15; }
+.product-editorial-details__cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; }
+.product-editorial-details__cards article { display:flex; align-items:flex-start; gap:14px; padding:24px; border:1px solid rgba(120,150,210,.25); border-radius:14px; background:rgba(3,11,28,.72); }
+.product-editorial-details__cards svg { width:24px; height:24px; flex:none; color:var(--color-info); }
+.product-editorial-details__cards p { margin:0; color:#d2d5df; line-height:1.6; }
+@media(max-width:700px) { .product-editorial-details__cards { grid-template-columns:1fr; } }

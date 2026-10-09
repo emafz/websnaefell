@@ -2,6 +2,18 @@
 
 Sitio comercial responsive de Snaefell desarrollado con React, TypeScript y Vite. La experiencia está orientada a descubrir, comparar y consultar bicicletas y monopatines eléctricos mediante WhatsApp.
 
+## Versiones de la tienda
+
+La raíz `/` muestra el selector de **Versión 1.0** y **Versión 2.0**.
+
+- `/version-1/`: tienda que iremos editando, en los archivos originales de `src/`.
+- `/version-2/`: copia completa de la tienda actual, en `src/versions/version-2/`.
+- Las rutas anteriores, como `/modelos`, siguen disponibles con la Versión 1.0.
+
+Cada versión mantiene su propia navegación, componentes, datos, imágenes y estilos. Para editar la Versión 1.0, trabajar en `src/pages`, `src/components`, `src/data`, `src/assets` y `src/styles`; conservar la carpeta `src/versions/version-2` para mantener la copia. El selector está en `src/versioning`.
+
+La barra superior permite regresar al selector. Al cambiar de versión se carga una página nueva para cargar únicamente los estilos de esa versión.
+
 ## Funcionalidades
 
 - Home institucional con gamas, beneficios, novedades y asesoramiento.

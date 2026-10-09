@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronDown } from "lucide-react";
+﻿import { ArrowRight, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEO from "../../components/SEO/SEO";
 import { modelDisplayProducts } from "../../data/modelOrder";
@@ -6,16 +6,21 @@ import paisaje from "../../assets/home/paisaje.webp";
 import urban from "../../assets/home/range-urban.webp";
 import scooters from "../../assets/home/range-scooters.webp";
 import offroad from "../../assets/home/range-offroad.webp";
+import heroF1 from "../../assets/hero/hero-f1-1920.jpg";
+import heroF2 from "../../assets/hero/hero-f2-1920.jpg";
+import heroP2 from "../../assets/hero/hero-p2-1920.jpg";
+import heroP5 from "../../assets/hero/hero-p5-1920.jpg";
+import heroP6 from "../../assets/hero/hero-p6-1920.jpg";
 import { absoluteUrl } from "../../utils/site";
 import { trackEvent } from "../../utils/analytics";
 import "./Productos.css";
 
 export const productHeroById: Record<string, string> = {
-  "bestride-f1": "/assets/hero/hero-f1-1920.jpg",
-  "bestride-pro-f2": "/assets/hero/hero-f2-1920.jpg",
-  "light-p2": "/assets/hero/hero-p2-1920.jpg",
-  "antelope-p5": "/assets/hero/hero-p5-1920.jpg",
-  "mantis-p6": "/assets/hero/hero-p6-1920.jpg",
+  "bestride-f1": heroF1,
+  "bestride-pro-f2": heroF2,
+  "light-p2": heroP2,
+  "antelope-p5": heroP5,
+  "mantis-p6": heroP6,
 };
 
 const categoryLabel = (category: string) =>

@@ -1,0 +1,4 @@
+.product-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:24px; }
+.empty-state { padding:60px; text-align:center; border:1px dashed var(--color-border); border-radius:var(--radius-md); color:var(--color-muted); }
+@media(max-width:1000px){ .product-grid{grid-template-columns:repeat(2, minmax(0,1fr));} }
+@media(max-width:650px){ .product-grid{grid-template-columns:1fr;} }

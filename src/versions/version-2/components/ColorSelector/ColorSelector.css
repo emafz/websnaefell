@@ -1,0 +1,5 @@
+.color-selector { display:flex; gap:10px; }
+.color-selector button { position:relative; width:38px; height:38px; border-radius:50%; padding:4px; border:1px solid transparent; background:#fff; transition:border-color var(--transition), box-shadow var(--transition); }
+.color-selector button.selected { border-color:var(--color-accent); box-shadow:0 0 0 3px rgba(90,24,234,.28); }
+.color-selector button.selected::after { content:"✓"; position:absolute; inset:0; display:grid; place-items:center; color:#fff; font-size:14px; font-weight:800; text-shadow:0 1px 3px rgba(0,0,0,.6); }
+.color-selector span { width:100%; height:100%; border-radius:50%; display:block; border:1px solid #cfcfcf; }

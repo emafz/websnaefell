@@ -1,0 +1,18 @@
+import { Link } from "react-router-dom";
+import logo from "../../assets/global/snaefell-logo.webp";
+import { generateWhatsAppUrl } from "../../utils/whatsapp";
+import "./Footer.css";
+
+export default function Footer() {
+  return (
+    <footer className="site-footer" id="contacto">
+      <div className="container footer-grid">
+        <div className="footer-brand"><img src={logo} alt="Snaefell" /><p>Movilidad eléctrica para elegir tu propio camino.</p></div>
+        <div><h4>Navegación</h4><Link to="/productos">Productos</Link><Link to="/nosotros">Nosotros</Link><Link to="/novedades">Guías</Link><Link to="/contacto">Contacto</Link></div>
+        <div><h4>Productos</h4><Link to="/productos#bestride-f1">Monopatines eléctricos</Link><Link to="/productos#light-p2">Bicicletas eléctricas</Link><Link to="/productos#comparador">Comparar modelos</Link></div>
+        <div><h4>Contacto</h4><a href={generateWhatsAppUrl()} target="_blank" rel="noopener noreferrer">Recibir asesoramiento</a><Link to="/contacto">Quiero ser distribuidor</Link></div>
+      </div>
+      <div className="container footer-bottom"><span>© {new Date().getFullYear()} Snaefell</span><span>Movilidad eléctrica con diseño y respaldo.</span></div>
+    </footer>
+  );
+}
