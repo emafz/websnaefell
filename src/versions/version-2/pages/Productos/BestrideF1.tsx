@@ -14,12 +14,12 @@ import dashboard from "../../assets/f1/F1_Tablero-F1.webp";
 import folded from "../../assets/f1/Recurso-7-10.webp";
 import suspension from "../../assets/f1/Recurso-8-1.webp";
 import ProductEditorialDetails from "./ProductEditorialDetails";
+import PhotoSection from "./ProductPhoto";
 import "./BestrideF1.css";
+import "./BestrideF1Showcase.css";
 
 const mosaic = [
-  { image: battery, title: "Batería de litio de 48 V / 13 Ah", alt: "Detalle de la batería del Bestride F1" },
-  { image: profile, title: "Diseño compacto para moverte por la ciudad", alt: "Bestride F1 de perfil", wide: true },
-  { image: folded, title: "Estructura plegable. Llevá tu F1 con vos.", alt: "Bestride F1 plegado", wide: true },
+  { image: folded, title: "Estructura plegable. Llevá tu F1 con vos.", alt: "Bestride F1 plegado" },
   { image: suspension, title: "Doble suspensión trasera", alt: "Detalle del amortiguador del F1" },
 ];
 
@@ -29,15 +29,17 @@ export default function BestrideF1({ product, variant }: { product: Product; var
   const context = { productName: product.name, model: product.model, sku: variant.sku, color: variant.color };
   const facts = [...product.features, { label: "Carga máxima", value: "120 kg" }];
   return (
-    <div className="f1-page">
+    <div className="f1-page f1-showcase">
       <SEO title="Bestride F1 | Snaefell" description={product.shortDescription} path={path} image={hero} type="product" structuredData={{ "@context": "https://schema.org", "@type": "Product", name: product.name, description: product.shortDescription, image: absoluteUrl(hero), sku: variant.sku, brand: { "@type": "Brand", name: "Snaefell" }, url: absoluteUrl(path) }} />
       <header className="f1-hero">
         <img className="f1-hero__image" src={hero} alt="Bestride F1 en un espacio urbano iluminado" fetchPriority="high" />
         <div className="f1-hero__title"><h1>Bestride F1</h1><p>Tu próximo movimiento, eléctrico.</p></div>
         <dl className="f1-hero__facts">{facts.map((fact) => <div key={fact.label}><dd>{fact.value}</dd><dt>{fact.label}</dt></div>)}</dl>
       </header>
-      <section className="f1-mosaic" aria-label="Diseño y detalles del Bestride F1">
-        {mosaic.map((tile) => <figure className={tile.wide ? "f1-mosaic__tile f1-mosaic__tile--wide" : "f1-mosaic__tile"} key={tile.title}><img src={tile.image} alt={tile.alt} loading="lazy" /><figcaption>{tile.title}</figcaption></figure>)}
+      <PhotoSection image={profile} alt="Bestride F1 de perfil en un espacio de arquitectura urbana" title="La ciudad, a tu manera." text="Diseño compacto para moverte sentado o de pie. Vos elegís cómo hacer tu recorrido." />
+      <PhotoSection image={battery} alt="Batería extraíble del Bestride F1" title="Energía que va con vos." text="Batería de litio de 48 V / 13 Ah. Retirala para cargarla o cargala directamente en tu F1." position="center 45%" />
+      <section className="f1-detail-pair" aria-label="Diseño y detalles del Bestride F1">
+        {mosaic.map((tile) => <figure className="f1-detail-pair__tile" key={tile.title}><img src={tile.image} alt={tile.alt} loading="lazy" decoding="async" /><figcaption>{tile.title}</figcaption></figure>)}
       </section>
       <section className="f1-colors" aria-labelledby="f1-colors-heading">
         <h2 id="f1-colors-heading">Elegí tu F1</h2>
@@ -45,10 +47,8 @@ export default function BestrideF1({ product, variant }: { product: Product; var
         <img className="f1-colors__image" src={colors} alt="Bestride F1 en distintos colores" loading="lazy" />
         <div className="f1-colors__selector"><ColorSelector variants={product.variants} selectedId={variant.id} onChange={(next) => navigate(`/productos/${product.slug}/${next.slug}`)} /><span>{variant.color}</span></div>
       </section>
-      <section className="f1-mosaic f1-mosaic--controls" aria-label="Equipamiento del Bestride F1">
-        <figure className="f1-mosaic__tile"><img src={dashboard} alt="Tablero digital del F1" loading="lazy" /><figcaption>Tu recorrido, a la vista.</figcaption></figure>
-        <figure className="f1-mosaic__tile f1-mosaic__tile--wide"><img src={riding} alt="Persona conduciendo un Bestride F1 en la ciudad" loading="lazy" /><figcaption>Tres modos de conducción: Eco, City y Sport</figcaption></figure>
-      </section>
+      <PhotoSection image={riding} alt="Persona conduciendo un Bestride F1 en la ciudad" title="Encontrá tu ritmo." text="Tres modos de conducción: Eco, City y Sport." position="58% center" />
+      <PhotoSection image={dashboard} alt="Pantalla del tablero digital y controles del Bestride F1" title="Tu recorrido, a la vista." text="Toda la información de tu F1 en su tablero digital." position="center 40%" />
       <section className="f1-contact" style={{ backgroundImage: `url(${profile})` }}>
         <div><h2>Conocé Bestride F1</h2><p>Descubrí su diseño y equipamiento. Consultanos por disponibilidad y opciones de entrega.</p><div className="f1-contact__actions"><WhatsAppCTA location="f1_detail" label="Consultanos por WhatsApp" {...context} /><a href="#f1-specifications">Ficha técnica</a></div></div>
       </section>
