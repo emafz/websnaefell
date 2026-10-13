@@ -4,6 +4,6 @@
 .faq-section__list details { border-top:1px solid rgba(255,255,255,.2); }
 .faq-section__list details:last-child { border-bottom:1px solid rgba(255,255,255,.2); }
 .faq-section__list summary { display:flex; justify-content:space-between; gap:20px; padding:22px 0; list-style:none; cursor:pointer; font-weight:700; }
-.faq-section__list summary::-webkit-details-marker{display:none}.faq-section__list summary span{color:var(--color-accent-soft);font-size:1.4rem}.faq-section__list details[open] summary span{transform:rotate(45deg)}
+.faq-section__list summary::-webkit-details-marker{display:none}.faq-section__list summary svg{width:17px;height:17px;flex:0 0 auto;color:#fff;transition:transform var(--transition)}.faq-section__list details[open] summary svg{transform:rotate(180deg)}
 .faq-section__list details p{margin:0;padding:0 38px 24px 0}
 @media(max-width:800px){.faq-section{grid-template-columns:1fr;gap:30px}}

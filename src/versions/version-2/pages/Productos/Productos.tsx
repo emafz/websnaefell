@@ -72,7 +72,7 @@ export default function Productos() {
         </div>
       </section>
 
-      <section className="section"><div className="container"><FAQSection title="Antes de elegir tu Snaefell" intro="Respuestas generales para comparar con más claridad. Para condiciones comerciales vigentes, consultá con nuestro equipo." items={generalPurchaseFaq}/></div></section>
+      <section className="products-faq section"><div className="container"><FAQSection title="Antes de elegir tu Snaefell" items={generalPurchaseFaq} defaultOpenCount={4}/></div></section>
 
       <section className="products-guide section">
         <div className="container products-guide__layout">
