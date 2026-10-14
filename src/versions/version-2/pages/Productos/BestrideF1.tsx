@@ -1,5 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import type { Product, ProductVariant } from "../../types/Product";
 import SEO from "../../components/SEO/SEO";
 import ColorSelector from "../../components/ColorSelector/ColorSelector";
@@ -52,7 +51,6 @@ export default function BestrideF1({ product, variant }: { product: Product; var
       <section className="f1-contact" style={{ backgroundImage: `url(${profile})` }}>
         <div><h2>Conocé Bestride F1</h2><p>Descubrí su diseño y equipamiento. Consultanos por disponibilidad y opciones de entrega.</p><div className="f1-contact__actions"><WhatsAppCTA location="f1_detail" label="Consultanos por WhatsApp" {...context} /><a href="#f1-specifications">Ficha técnica</a></div></div>
       </section>
-      <section className="f1-technical" id="f1-specifications"><details><summary>Especificaciones técnicas <ChevronDown aria-hidden="true" /></summary><dl>{product.specifications.map((spec) => <div key={spec.label}><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}</dl></details><Link to="/productos">Ver todos los productos</Link></section>
       <ProductEditorialDetails product={product} variant={variant} />
     </div>
   );

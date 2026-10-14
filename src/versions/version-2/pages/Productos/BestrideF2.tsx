@@ -1,5 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import type { Product, ProductVariant } from "../../types/Product";
 import SEO from "../../components/SEO/SEO";
 import ColorSelector from "../../components/ColorSelector/ColorSelector";
@@ -16,6 +15,7 @@ import suspension from "../../assets/f2/Recurso-6.webp";
 import ProductEditorialDetails from "./ProductEditorialDetails";
 import PhotoSection from "./ProductPhoto";
 import "./BestrideF1.css";
+import "./BestrideF1Showcase.css";
 
 const mosaic = [
   { image: battery, title: "Batería de litio de 48 V / 23,4 Ah", alt: "Detalle de la batería del Bestride Pro F2" },
@@ -51,7 +51,6 @@ export default function BestrideF2({ product, variant }: { product: Product; var
       <section className="f1-contact" style={{ backgroundImage: `url(${profile})` }}>
         <div><h2>Conocé Bestride Pro F2</h2><p>Descubrí su diseño y equipamiento. Consultanos por disponibilidad y opciones de entrega.</p><div className="f1-contact__actions"><WhatsAppCTA location="f2_detail" label="Consultanos por WhatsApp" {...context} /><a href="#f2-specifications">Ficha técnica</a></div></div>
       </section>
-      <section className="f1-technical" id="f2-specifications"><details><summary>Especificaciones técnicas <ChevronDown aria-hidden="true" /></summary><dl>{product.specifications.map((spec) => <div key={spec.label}><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}</dl></details><Link to="/productos">Ver todos los productos</Link></section>
       <ProductEditorialDetails product={product} variant={variant} />
     </div>
   );
